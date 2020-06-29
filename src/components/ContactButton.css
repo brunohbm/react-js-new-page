@@ -1,0 +1,12 @@
+.contact-button {
+    color: var(--secundary-color);
+    font-family: 'Montserrat';
+    position: absolute;
+    top: 25px;
+    right: 22px;
+    margin: 0px;
+    background-color: transparent;
+    height: 37px;
+    width: 120px;
+    border: 1px solid var(--secundary-color);
+}
