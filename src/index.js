@@ -5,6 +5,7 @@ import './index.css';
 
 import Logo from './components/Logo';
 import ContactButton from './components/ContactButton';
+import ControlButtons from './components/ControlButtons';
 
 import MainPage from './pages/MainPage';
 
@@ -23,10 +24,22 @@ const App = () => {
 
 	}
 
+	const onUp = () => {
+		console.warn('onUp');
+	}
+
+	const onDown = () => {
+		console.warn('onDown');		
+	}
+
 	return (
 		<div className={`main-container ${actualState}`}>
 			<Logo />
 			<ContactButton onClick={goToContactPage} />
+			<ControlButtons 
+				onUp={onUp}	
+				onDown={onDown}	
+			/>
 			{/* {render[actualState] ? render[actualState](pageProps) : null} */}
 		</div>
 	);

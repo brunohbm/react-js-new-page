@@ -8,4 +8,5 @@
     font-size: 40px;
     font-weight: 900;
     line-height: 28px;
+    animation: fadeIn var(--animation-fade-time) linear forwards;
 }

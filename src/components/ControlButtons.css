@@ -1,0 +1,104 @@
+.control-buttons  {
+    opacity: 0;
+    animation: fadeInButton var(--animation-fade-time) linear forwards;
+}
+
+@keyframes fadeInButton {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 25%;
+    }
+}
+
+.control-percent {
+    opacity: 0;
+    animation: fadeInControlPorcent var(--animation-fade-time) linear forwards;
+}
+
+@keyframes fadeInControlPorcent {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.control-buttons {
+    position: absolute;
+    bottom: 25px;
+    right: 22px;
+    height: 45px;
+    width: 45px;
+    border: 1px solid var(--primary-color);
+    border-radius: 100%;    
+    display: flex;
+    flex-direction: column;        
+    justify-content: center;
+    z-index: 2;     
+}
+
+.control-buttons button {
+    background-color: transparent;
+    color: var(--secundary-color);
+    border: none;
+    font-family: 'Montserrat';
+    font-size: 20px;
+    width: 100%;
+    line-height: 15px;  
+    opacity: 50%;     
+}
+
+.control-buttons button.down span {
+    transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    display: inline-block;
+}
+
+.control-buttons button:hover {
+    cursor: pointer;
+    opacity: 100%;     
+    zoom: 1.1;
+}
+
+.control-buttons button:focus, .control-buttons button:active {
+    box-shadow: none;
+    outline: none;
+}
+
+.control-percent {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    bottom: 25px;
+    right: 22px;
+    opacity: 50%;
+    z-index: 1;   
+}
+
+.control-percent svg {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+}
+
+.control-percent svg circle {
+    width: 60px;
+    height: 60px;
+    fill: none;
+    stroke-width: 2px;
+    stroke: var(--primary-color);
+    transform: translate(1.5px, 1.4px);
+    stroke-dasharray: 440;
+    stroke-dashoffset: 440;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 2s;
+}
+
+.control-percent.active svg circle {
+    stroke-dashoffset: 280;    
+    transition: stroke-dashoffset 3s;
+}

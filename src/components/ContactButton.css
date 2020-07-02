@@ -1,3 +1,7 @@
+.contact-button  {
+    animation: fadeIn var(--animation-fade-time) linear forwards;
+}
+
 .contact-button {
     color: var(--secundary-color);
     font-family: 'Montserrat';
@@ -9,4 +13,18 @@
     height: 37px;
     width: 120px;
     border: 1px solid var(--secundary-color);
+    font-size: 13px;
+    transition: border 0.7s, font-size 0.5s;
+}
+
+.contact-button:hover {
+    cursor: pointer;
+    font-size: 13.5px;
+    border: 1px solid transparent;
+    
+}
+
+.contact-button:focus, .contact-button:active {
+    box-shadow: none;
+    outline: none;
 }

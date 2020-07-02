@@ -2,6 +2,7 @@
     --backgroud-color: #000000;
     --primary-color: #ECAEAC;
     --secundary-color: #E6E6E6;
+    --animation-fade-time: 7s;
 }
 
 body {
@@ -15,6 +16,11 @@ body {
     height: 100vh;
 }
 
-@keyframes animation {
-    
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
