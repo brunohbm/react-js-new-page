@@ -17,7 +17,7 @@
     transition: border 0.7s, font-size 0.5s;
 }
 
-.contact-button:hover {
+.contact-button:not(:disabled):hover {
     cursor: pointer;
     font-size: 13.5px;
     border: 1px solid transparent;

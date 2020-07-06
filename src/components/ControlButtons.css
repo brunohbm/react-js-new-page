@@ -58,7 +58,11 @@
     display: inline-block;
 }
 
-.control-buttons button:hover {
+.control-buttons button:disabled {
+    opacity: 20%;
+}
+
+.control-buttons button:not(:disabled):hover {
     cursor: pointer;
     opacity: 100%;     
     zoom: 1.1;

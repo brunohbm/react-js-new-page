@@ -35,10 +35,13 @@ const App = () => {
 	return (
 		<div className={`main-container ${actualState}`}>
 			<Logo />
-			<ContactButton onClick={goToContactPage} />
+			<ContactButton 
+				onClick={goToContactPage} 
+				onTransition={false}
+			/>
 			<ControlButtons 
-				onUp={onUp}	
 				onDown={onDown}	
+				onTransition={false}
 			/>
 			{/* {render[actualState] ? render[actualState](pageProps) : null} */}
 		</div>
