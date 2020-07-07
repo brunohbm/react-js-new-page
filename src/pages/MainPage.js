@@ -1,8 +1,12 @@
 import React from 'react';
+import './MainPage.css';
 
 const MainPage = () => (
-	<div>
-		<h1>Hello world!!</h1>
+	<div className="main-page">
+		<h1 className="first-part">HOW CAN I</h1>
+		<h1 className="second-part">HOW CAN I</h1>
+		<h1 className="first-part">HELP YOU ?</h1>
+		<h1 className="second-part">HELP YOU ?</h1>
 	</div>
 );
 
