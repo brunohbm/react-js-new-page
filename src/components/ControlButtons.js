@@ -30,7 +30,18 @@ const ControlButtons = ({ onUp, onDown, onTransition }) => {
 
 	const onTransitionEnd = () => {
 		if(onHover) {
-			onHover();
+			onHover(() => {
+				setDisabled(false);
+				setHasClick(false);
+				setPercentScroll(0.0);
+				setPercentActive(false);
+				onHover = null;
+				percentAmount = 0;
+				isDisabled = false;
+				isScrollPositive = false;
+				changeTimeOut = () => {};
+				scrollTimeOut = () => {};
+			});
 			setDisabled(true);			
 		}
 	}
@@ -78,7 +89,7 @@ const ControlButtons = ({ onUp, onDown, onTransition }) => {
 
 		return () => {
 			window.removeEventListener('wheel', onWheel);
-			window.removeEventListener('transitionend', handleScroll);
+			window.removeEventListener('transitionend', onTransitionEnd);
 		};
 	}, []);
 

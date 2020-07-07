@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import './styles/fonts.css';
 import './index.css';
@@ -14,36 +14,62 @@ const App = () => {
 		intro: props => <MainPage {...props} />,
 	};
 	const [actualState, setActualState] = useState('intro');
-	const [disabledActions, setDisabledActions] = useState(true);
+	const [onTransition, setOnTransition] = useState(false);
 
 	const pageProps = {
-		disabled: disabledActions,
+		disabled: onTransition,
 	};
 	
 	const goToContactPage = () => {
 
 	}
 
-	const onUp = () => {
-		console.warn('onUp');
+	const findKey = amount => {
+		const keys = Object.keys(render);
+		var nextPage = '';
+		keys.forEach((key, position) => {
+			if(key === actualState) {
+				nextPage = keys[position + amount];
+			}
+		})
 	}
 
-	const onDown = () => {
-		console.warn('onDown');		
+	const initTransition = (amount, callback) => {
+		const nextPage = findKey(amount);
+		const transition = document.querySelector('.main-container');
+		setOnTransition(true);
+		
+		transition.addEventListener('transitionend', transition => {
+			console.warn('transition', transition);
+			setActualState(nextPage);
+			setTimeout(() => {
+				callback();
+				setOnTransition(false);
+				window.removeEventListener('transitionend', onFinishTransition);
+			}, 700);
+		});		
+	}
+
+	const onUp = resetAction => {
+		initTransition(1, resetAction);
+	}
+
+	const onDown = resetAction => {
+		initTransition(-1, resetAction);
 	}
 
 	return (
-		<div className={`main-container ${actualState}`}>
+		<div className={`main-container ${onTransition ? 'on-transition' : ''} ${actualState}`}>
 			<Logo />
 			<ContactButton 
 				onClick={goToContactPage} 
-				onTransition={false}
+				onTransition={onTransition}
 			/>
 			<ControlButtons 
 				onDown={onDown}	
-				onTransition={false}
+				onTransition={onTransition}
 			/>
-			{/* {render[actualState] ? render[actualState](pageProps) : null} */}
+			{render[actualState] ? render[actualState](pageProps) : null}
 		</div>
 	);
 };
