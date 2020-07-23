@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import ReactDOM from 'react-dom';
 import './styles/fonts.css';
 import './index.css';
@@ -12,6 +12,7 @@ import MainPage from './pages/MainPage';
 const App = () => {
 	const render = {
 		intro: props => <MainPage {...props} />,
+		// newPage: props => <MainPage {...props} />,
 	};
 	const [actualState, setActualState] = useState('intro');
 	const [onTransition, setOnTransition] = useState(false);
@@ -24,23 +25,27 @@ const App = () => {
 
 	}
 
-	const findKey = amount => {
+	const findKey = useCallback(amount => {
 		const keys = Object.keys(render);
 		var nextPage = '';
 		keys.forEach((key, position) => {
 			if(key === actualState) {
 				nextPage = keys[position + amount];
 			}
-		})
-	}
+		});
 
-	const initTransition = (amount, callback) => {
+		return nextPage;
+	}, [actualState]);
+
+	const initTransition = useCallback((amount, callback) => {
 		const nextPage = findKey(amount);
 		const transition = document.querySelector('.main-container');
 		setOnTransition(true);
 		
-		transition.addEventListener('transitionend', transition => {
-			console.warn('transition', transition);
+		transition.addEventListener('transitionend', transition => {			
+			console.warn('transition', transition.target);
+			console.warn('nextPage', nextPage);	
+			if (!((transition.target || {}).id === 'mainContainer')) return;		
 			setActualState(nextPage);
 			setTimeout(() => {
 				callback();
@@ -48,24 +53,25 @@ const App = () => {
 				window.removeEventListener('transitionend', onFinishTransition);
 			}, 700);
 		});		
-	}
+	}, []);
 
-	const onUp = resetAction => {
+	const onUp = useCallback(resetAction => {
 		initTransition(1, resetAction);
-	}
+	}, []);
 
-	const onDown = resetAction => {
+	const onDown = useCallback(resetAction => {
 		initTransition(-1, resetAction);
-	}
+	}, []);
 
 	return (
-		<div className={`main-container ${onTransition ? 'on-transition' : ''} ${actualState}`}>
+		<div key="mainContainer" className={`main-container ${onTransition ? 'on-transition' : ''} ${actualState}`}>			
 			<Logo />
 			<ContactButton 
 				onClick={goToContactPage} 
 				onTransition={onTransition}
 			/>
 			<ControlButtons 
+				onUp={onUp}
 				onDown={onDown}	
 				onTransition={onTransition}
 			/>

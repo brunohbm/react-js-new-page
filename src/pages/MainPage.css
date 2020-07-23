@@ -1,25 +1,22 @@
 .main-page .first-text-part, 
 .main-page .second-text-part,
 .main-page .third-text-part,
-.main-page .fouth-text-part,
-.main-page .fifth-text-part {
+.main-page .fourth-text-part {
     font-family: 'Cormorant Garamond';
     font-size: 160px;
     font-weight: 100;
     position: fixed;
-    margin: 0px;    
+    margin: 0px;   
 }
 
-.main-page .first-text-part, .main-page .fouth-text-part {
+.main-page .first-text-part, .main-page .fourth-text-part {   
     color: var(--secundary-color);
+    transition: color 2s;
 }
 
-.main-page .second-text-part, .main-page .third-text-part, .main-page .fifth-text-part {
+.main-page .second-text-part, .main-page .third-text-part {
     color: var(--primary-color);
-}
-
-.main-page .fifth-text-part {
-    display: none;
+    transition: color 2s;
 }
 
 .main-page .first-text-part, 
@@ -30,28 +27,31 @@
 }
 
 .main-page .third-text-part, 
-.main-page .fouth-text-part {
+.main-page .fourth-text-part {
     bottom: 51.28%;
-    opacity: 0;
     z-index: 1;
 }
 
 .main-page .first-text-part {
     animation: firstPart var(--animation-fade-time) ease forwards;
+    -webkit-animation: firstPart var(--animation-fade-time) ease forwards;
 }
 
 .main-page .second-text-part {
     animation: secondPart var(--animation-fade-time) ease forwards;
+    -webkit-animation: secondPart var(--animation-fade-time) ease forwards;
 }
 
 .main-page .third-text-part {
     left: -170px; 
     animation: thirdPart 5s ease forwards;    
+    -webkit-animation: thirdPart 5s ease forwards;    
 }
 
-.main-page .fouth-text-part {       
+.main-page .fourth-text-part {       
     right: -670px;
     animation: fourthPart 5s ease forwards;    
+    -webkit-animation: fourthPart 5s ease forwards;    
 }
 
 .main-page img.up-hand, .main-page img.down-hand {
@@ -62,12 +62,114 @@
 
 .main-page .up-hand {
     animation: upHand 5s ease forwards;
+    -webkit-animation: upHand 5s ease forwards;    
 }
 
 .main-page .down-hand {
     animation: downHand 5s ease forwards;
+    -webkit-animation: downHand 5s ease forwards;
     transform: rotate(180deg);   
 }
+
+@media screen and (max-width: 1250px) {
+    .main-page .up-hand {
+        animation: opacityAnimation 3s ease forwards;
+        -webkit-animation: opacityAnimation 3s ease forwards;
+        top: -100px;
+        right: -70px;
+    }
+    
+    .main-page .down-hand {
+        animation: opacityAnimation 3s ease forwards;  
+        -webkit-animation: opacityAnimation 3s ease forwards;  
+        top: -280px;
+        right: -90px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .main-page .first-text-part {
+        width: max-content;
+        background-color: transparent;
+        animation: smallFirstPart var(--animation-fade-time) ease forwards;
+        -webkit-animation: smallFirstPart var(--animation-fade-time) ease forwards;
+    }
+    .main-page .second-text-part, .main-page .fourth-text-part {
+        display: none;
+    }
+    .main-page .third-text-part {
+        width: max-content;
+        animation: smallThirdPart 4.3s ease forwards;
+        -webkit-animation: smallThirdPart 4.3s ease forwards;
+    }
+    .main-page .up-hand {
+        animation: smallUpHand 5s ease forwards;
+        -webkit-animation: smallUpHand 5s ease forwards;
+        top: -100px;
+        right: -70px;
+    }
+    .main-page .down-hand {
+        animation: smallDownHand 5s ease forwards;  
+        -webkit-animation: smallDownHand 5s ease forwards;  
+        top: -280px;
+        right: -90px;
+    }
+}
+
+@media screen and (max-width: 860px) { 
+    .main-page .first-text-part {
+        font-size: 19vw;
+        width: 95vw;
+        top: 70px;
+        text-align: center;
+        line-height: 165px;
+    }
+    .main-page .third-text-part {        
+        font-size: 19vw;
+        -webkit-animation: verySmallThirdPart 5s ease forwards;
+        animation: verySmallThirdPart 5s ease forwards;
+    }
+}
+
+.main-container.on-transition .main-page .first-text-part,
+.main-container.on-transition .main-page .second-text-part,
+.main-container.on-transition .main-page .third-text-part,
+.main-container.on-transition .main-page .fourth-text-part {
+    color: transparent;
+}
+
+@keyframes smallDownHand {
+    0% {
+        opacity: 0;
+        top: -100%;
+        right: -390px;
+    }
+    40% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0.5;
+        top: -280px;
+        right: calc(calc(100vw - 1000px) * 0.5);
+    }
+}
+
+@keyframes smallUpHand {
+    0% {
+        bottom: -100%;
+        opacity: 0;
+        right: 200px;
+    }
+    40% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0.5;
+        bottom: -273px;
+        right: calc(calc(100vw - 1000px) * 0.5);
+    }
+}
+
 
 @keyframes downHand {
     0% {
@@ -84,24 +186,24 @@
 
 @keyframes upHand {
     0% {
-        top: 100%;
+        bottom: -100%;
         opacity: 0;
         right: 200px;
     }
     100% {
         opacity: 1;
-        top: -100px;
+        bottom: -273px;
         right: -70px;
     }
 }
 
 @keyframes firstPart {
     0% {
-        color: var(--backgroud-color); 
+        opacity: 0;
         left: -450px
     }
     15% {
-        color: var(--backgroud-color);
+        opacity: 0;
     }
     100% {
         opacity: 1;
@@ -111,11 +213,11 @@
 
 @keyframes secondPart {
     0% {       
-        color: var(--backgroud-color); 
+        opacity: 0;
         right: -800px;
     }
     15% {
-        color: var(--backgroud-color);
+        opacity: 0;
     }
     100% {
         right: -690px;
@@ -126,6 +228,9 @@
     0% {
         opacity: 0;
         left: -570px;
+    }
+    50% {
+        opacity: 0;
     }
     65% {
         opacity: 0.5;
@@ -143,6 +248,9 @@
         opacity: 0;
         right: -970px;
     }
+    50% {
+        opacity: 0;
+    }
     65% {
         opacity: 0.5;
         right: -670px;
@@ -154,21 +262,7 @@
     }
 }
 
-@media screen and (max-width: 1250px) {
-    .main-page .up-hand {
-        animation: outHand 3s ease forwards;
-        top: -100px;
-        right: -70px;
-    }
-    
-    .main-page .down-hand {
-        animation: outHand 3s ease forwards;  
-        top: -280px;
-        right: -90px;
-    }
-}
-
-@keyframes outHand {
+@keyframes opacityAnimation {
     0% {
         opacity: 1;
     }
@@ -177,11 +271,55 @@
     }
 }
 
-@media screen and (max-width: 1000px) {
-    .main-page .fifth-text-part {
-        display: unset;
+@keyframes smallThirdPart {
+    0% {
+        opacity: 0;
+        left: -450px;
+    }
+    80% {
         left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
+        opacity: 0;
+        transform: translate(-50%, 0%);
+        bottom: 45.78%;
+    }    
+    100% {
+        opacity: 1;
+        bottom: 20.78%;
+        left: 50%;
+        transform: translate(-50%, 0%);
     }
 }
+
+@keyframes verySmallThirdPart {
+    0% {
+        opacity: 0;
+        left: -450px;
+    }
+    80% {
+        left: 50%;
+        opacity: 0;
+        transform: translate(-50%, 0%);
+        bottom: 45.78%;
+    }    
+    100% {
+        opacity: 1;
+        bottom: calc(calc(calc(1000px - 100vw) * 0.1) + 50px);;
+        left: 50%;
+        transform: translate(-50%, 0%);
+    }
+}
+
+@keyframes smallFirstPart {
+    0% {
+        color: var(--backgroud-color); 
+        left: -450px
+    }
+    15% {
+        color: var(--backgroud-color);
+    }
+    100% {
+        opacity: 1;
+        left: 50%;
+        transform: translate(-50%, 0%);
+    }
+} 

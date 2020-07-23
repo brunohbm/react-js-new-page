@@ -1,6 +1,7 @@
 .control-buttons  {
     opacity: 0;
     animation: fadeInButton var(--animation-fade-time) linear forwards;
+    z-index: 3;
 }
 
 @keyframes fadeInButton {

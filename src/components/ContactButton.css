@@ -1,5 +1,6 @@
 .contact-button  {
     animation: fadeIn var(--animation-fade-time) linear forwards;
+    z-index: 3;
 }
 
 .contact-button {

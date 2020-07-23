@@ -24,6 +24,7 @@ const ControlButtons = ({ onUp, onDown, onTransition }) => {
 			if(!isDisabled && percentAmount < 160) {
 				setPercentScroll(0.0);
 				percentAmount = 0;
+				onHover = null;
 			}
 		}, 1500);
 	}, [percentScroll]);

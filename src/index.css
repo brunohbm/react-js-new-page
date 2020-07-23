@@ -24,3 +24,39 @@ body {
         opacity: 1;
     }
 }
+
+.main-container.on-transition.intro::after {
+    content: '';
+    background-color: var(--primary-color);
+    position: fixed;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    z-index: 2;
+    animation: introChangeBackgroud 3s ease forwards;
+    -webkit-animation: introChangeBackgroud 3s ease forwards;
+}
+
+@keyframes introChangeBackgroud {
+    0% {
+        width: 0;
+        height: 0;
+    }
+    50% {
+        height: 1px;
+        width: 100vw;
+    }
+    100% {
+        height: 100vh;
+        width: 100vw;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
