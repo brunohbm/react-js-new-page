@@ -167,7 +167,7 @@ const ControlButtons = ({ onUp, onDown, onTransition }) => {
 					</span>
 				</button>
 			</div>
-			<div				
+			<div	
 				className={`control-percent ${percentActive ? 'active' : ''}`}
 			>
 				<svg>

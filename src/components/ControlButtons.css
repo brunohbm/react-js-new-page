@@ -1,7 +1,7 @@
 .control-buttons  {
     opacity: 0;
     animation: fadeInButton var(--animation-fade-time) linear forwards;
-    z-index: 3;
+    z-index: 5;
 }
 
 @keyframes fadeInButton {
@@ -38,7 +38,7 @@
     display: flex;
     flex-direction: column;        
     justify-content: center;
-    z-index: 2;     
+    z-index: 5;     
 }
 
 .control-buttons button {
@@ -81,7 +81,7 @@
     bottom: 40px;
     right: 40px;
     opacity: 50%;
-    z-index: 1;   
+    z-index: 4;   
 }
 
 .control-percent svg {

@@ -8,11 +8,12 @@ import ContactButton from './components/ContactButton';
 import ControlButtons from './components/ControlButtons';
 
 import MainPage from './pages/MainPage';
+import PortfolioPage from './pages/PortfolioPage';
 
 const App = () => {
 	const render = {
 		intro: props => <MainPage {...props} />,
-		// newPage: props => <MainPage {...props} />,
+		portfolio: props => <PortfolioPage {...props} />,
 	};
 	const [actualState, setActualState] = useState('intro');
 	const [onTransition, setOnTransition] = useState(false);
@@ -38,33 +39,29 @@ const App = () => {
 	}, [actualState]);
 
 	const initTransition = useCallback((amount, callback) => {
-		const nextPage = findKey(amount);
-		const transition = document.querySelector('.main-container');
-		setOnTransition(true);
-		
-		transition.addEventListener('transitionend', transition => {			
-			console.warn('transition', transition.target);
-			console.warn('nextPage', nextPage);	
-			if (!((transition.target || {}).id === 'mainContainer')) return;		
+		const nextPage = findKey(amount);		
+		setOnTransition(true);		
+
+		setTimeout(() => {
 			setActualState(nextPage);
+
 			setTimeout(() => {
 				callback();
 				setOnTransition(false);
-				window.removeEventListener('transitionend', onFinishTransition);
-			}, 700);
-		});		
+			}, 3000);
+		}, 3500);
 	}, []);
 
 	const onUp = useCallback(resetAction => {
-		initTransition(1, resetAction);
-	}, []);
-
-	const onDown = useCallback(resetAction => {
 		initTransition(-1, resetAction);
 	}, []);
 
+	const onDown = useCallback(resetAction => {
+		initTransition(1, resetAction);
+	}, []);
+
 	return (
-		<div key="mainContainer" className={`main-container ${onTransition ? 'on-transition' : ''} ${actualState}`}>			
+		<div id="mainContainer" className={`main-container ${onTransition ? 'on-transition' : ''} ${actualState}`}>			
 			<Logo />
 			<ContactButton 
 				onClick={goToContactPage} 

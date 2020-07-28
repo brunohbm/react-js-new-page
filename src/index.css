@@ -37,6 +37,10 @@ body {
     -webkit-animation: introChangeBackgroud 3s ease forwards;
 }
 
+.main-container.portfolio {
+    background-color: var(--primary-color);
+}
+
 @keyframes introChangeBackgroud {
     0% {
         width: 0;

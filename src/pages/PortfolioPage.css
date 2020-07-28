@@ -1,0 +1,23 @@
+.portfolio-page {
+    display: inline-block;
+    width: 100%;
+}
+
+.portfolio-page .col {
+    width: 25%;
+    display: inline-block;
+    float: left;
+    background-color: var(--backgroud-color);
+}
+
+.portfolio-page .col .title {
+    
+}
+
+.portfolio-page .col .period {
+    
+}
+
+.portfolio-page .col .description {
+    
+}

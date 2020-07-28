@@ -55,9 +55,11 @@
 }
 
 .main-page img.up-hand, .main-page img.down-hand {
+    transition: filter 3.5s;
     position: fixed;
     z-index: 0;
     height: 1050px; 
+
 }
 
 .main-page .up-hand {
@@ -134,8 +136,15 @@
 .main-container.on-transition .main-page .first-text-part,
 .main-container.on-transition .main-page .second-text-part,
 .main-container.on-transition .main-page .third-text-part,
-.main-container.on-transition .main-page .fourth-text-part {
+.main-container.on-transition .main-page .fourth-text-part
+{
     color: transparent;
+}
+
+.main-container.on-transition .main-page img.down-hand,
+.main-container.on-transition .main-page img.up-hand
+{
+    filter:opacity(0%);
 }
 
 @keyframes smallDownHand {
