@@ -15,7 +15,7 @@ const App = () => {
 		intro: props => <MainPage {...props} />,
 		portfolio: props => <PortfolioPage {...props} />,
 	};
-	const [actualState, setActualState] = useState('intro');
+	const [actualState, setActualState] = useState('portfolio');
 	const [onTransition, setOnTransition] = useState(false);
 
 	const pageProps = {

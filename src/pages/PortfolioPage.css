@@ -1,17 +1,54 @@
 .portfolio-page {
-    display: inline-block;
-    width: 100%;
+    
+}
+
+.portfolio-page .carrer-text {
+    font-family: 'Cormorant Garamond';
+    font-size: 25vw;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    animation: fadeInOut calc(var(--animation-fade-time) * 1.7) ease-in forwards;
+}
+
+.portfolio-page .col:nth-child(1) {
+    height: 37vh;    
+    animation: pageAnimation calc(var(--animation-fade-time) * 2.2) linear forwards;
+}
+
+.portfolio-page .col:nth-child(2) {
+    height: 52vh;
+    right: 50%;
+    animation: pageAnimation calc(var(--animation-fade-time) * 2.4) ease-in forwards;
+}
+
+.portfolio-page .col:nth-child(3) {
+    height: 67vh;
+    right: 25%;
+    animation: pageAnimation calc(var(--animation-fade-time) * 2.6) ease-in forwards;
+}
+
+.portfolio-page .col:nth-child(4) {
+    height: 82vh;
+    right: 0%;
+    animation: pageAnimation calc(var(--animation-fade-time) * 2.8) ease-in forwards;
 }
 
 .portfolio-page .col {
-    width: 25%;
-    display: inline-block;
-    float: left;
-    background-color: var(--backgroud-color);
+    width: calc(25% - 5vw);
+    position: fixed;
+    color: var(--secundary-color);
+    background-color: var(--backgroud-color);  
+    bottom: 0;
+    padding: 2.5vw 2.5vw 0 2.5vw;
 }
 
 .portfolio-page .col .title {
-    
+    font-family: 'Cormorant Garamond';
+    font-size: 43px;
+    line-height: 43px;
 }
 
 .portfolio-page .col .period {
@@ -20,4 +57,31 @@
 
 .portfolio-page .col .description {
     
+}
+
+@keyframes pageAnimation {
+    0% {
+        bottom: -100%;
+    }
+    50% {
+        bottom: -100%;
+    }
+    100% {
+        bottom: 0;
+    }
+}
+
+@keyframes fadeInOut {
+    20% {
+        opacity: 0;
+    }
+    45% {
+        opacity: 1;
+    }
+    55% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }
