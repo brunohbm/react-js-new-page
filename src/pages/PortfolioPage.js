@@ -20,7 +20,6 @@ const Col = ({ title, description, period }) => (
 
 const PortfolioPage = () => (
 	<div className="portfolio-page">
-
 		<Col
             title="College"
             period="2015 - 2017"
@@ -44,6 +43,8 @@ const PortfolioPage = () => (
         <div className="carrer-text">
             Career
         </div>
+        <div className="help-bar" />
+        <div className="help-backgroud" />
 	</div>
 );
 
