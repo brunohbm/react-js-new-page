@@ -24,9 +24,41 @@
     height: 37vh;            
 }
 
+.main-container.on-transition.portfolio .portfolio-page .col:nth-child(1) {
+    animation: fullHeightBar1 3s ease forwards;
+}
+
+@keyframes fullHeightBar1 {
+    0% {
+        height: 37vh;
+    }
+    38% {
+        height: 30vh;
+    }
+    100% {
+        height: 100vh;
+    }
+}
+
 .portfolio-page .col:nth-child(2) {
     height: 52vh;
     right: 50%;
+}
+
+.main-container.on-transition.portfolio .portfolio-page .col:nth-child(2) {
+    animation: fullHeightBar2 3s ease forwards;
+}
+
+@keyframes fullHeightBar2 {
+    0% {
+        height: 52vh;
+    }
+    38% {
+        height: 45vh;
+    }
+    100% {
+        height: 100vh;
+    }
 }
 
 .portfolio-page .col:nth-child(3) {
@@ -34,9 +66,42 @@
     right: 25%;
 }
 
+.main-container.on-transition.portfolio .portfolio-page .col:nth-child(3) {
+    animation: fullHeightBar3 3s ease forwards;
+}
+
+@keyframes fullHeightBar3 {
+    0% {
+        height: 67vh;
+    }
+    38% {
+        height: 60vh;
+    }
+    100% {
+        height: 100vh;
+    }
+}
+
+
 .portfolio-page .col:nth-child(4) {
     height: 82vh;
     right: 0%;
+}
+
+.main-container.on-transition.portfolio .portfolio-page .col:nth-child(4) {
+    animation: fullHeightBar4 3s ease forwards;
+}
+
+@keyframes fullHeightBar4 {
+    0% {
+        height: 82vh;
+    }
+    38% {
+        height: 75vh;
+    }
+    100% {
+        height: 100vh;
+    }
 }
 
 @media screen and (min-width: 1130px) {
@@ -61,6 +126,12 @@
     font-family: 'Cormorant Garamond';
     font-size: 43px;
     line-height: 43px;
+}
+
+.main-container.on-transition.portfolio .portfolio-page .col .title,
+.main-container.on-transition.portfolio .portfolio-page .col .period,
+.main-container.on-transition.portfolio .portfolio-page .col .description  {
+    animation: fadeOutText 3s ease forwards;
 }
 
 .portfolio-page .col .period {
@@ -167,22 +238,26 @@
 
 @keyframes fadeFirstColumn {
     0% {
-        opacity: 1;
+        width: 65%;
     }
     20% {
         opacity: 0;
+    }
+    21% {
+        width: 65%;
     }
     50% {
         opacity: 0;
     }
     100% {
         width: auto;
-        height: calc(25vh - 2.7vw);
+        height: calc(25vh - 3.0vw);
         position: fixed;
         z-index: 3; 
         opacity: 1;
         top: 0;
         left: 136px;
+        width: 65%;
     }
 }
 
@@ -193,17 +268,21 @@
     20% {
         opacity: 0;
     }
+    21% {
+        width: 65%;
+    }
     50% {
         opacity: 0;
     }
     100% {
         width: auto;
-        height: calc(25vh - 2.7vw);
+        height: calc(25vh - 3.0vw);
         position: fixed;
         z-index: 3; 
         opacity: 1;
         top: 25%;
         left: 136px;
+        width: 65%;
     }
 }
 
@@ -214,17 +293,21 @@
     20% {
         opacity: 0;
     }
+    21% {
+        width: 65%;
+    }
     50% {
         opacity: 0;
     }
     100% {
         width: auto;
-        height: calc(25vh - 2.7vw);
+        height: calc(25vh - 3.0vw);
         position: fixed;
         z-index: 3; 
         opacity: 1;
         top: 50%;
         left: 136px;
+        width: 65%;
     }
 }
 
@@ -235,17 +318,21 @@
     20% {
         opacity: 0;
     }
+    21% {
+        width: 65%;
+    }
     50% {
         opacity: 0;
     }
     100% {
         width: auto;
-        height: calc(25vh - 2.7vw);
+        height: calc(25vh - 3.0vw);
         position: fixed;
         z-index: 3; 
         opacity: 1;
         left: 136px;
         top: 75%;
+        width: 65%;
     }
 }
 
@@ -254,10 +341,26 @@
 
     }
     100% {
-        font-size: 35px;
-        line-height: 30px;
+        font-size: 30px;
+        line-height: 25px;
         display: inline-block;
         width: fit-content;
-        margin-top: 1.5%;
+        margin-top: 1%;
+    }
+}
+
+@keyframes fadeOutText {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+        margin-top: 10px;
+    }
+    80% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
     }
 }

@@ -33,7 +33,7 @@ const PortfolioPage = () => (
         <Col
             title="Appmoove"
             period="2018 - 2020"
-            description="I was hired as a web developer and during this period I learned new technologies, such as react js, ANTD, test with jest. And I learned how to work on a group, set priorities and many other skills."
+            description="I was hired as a web developer and during this period I learned new technologies, such as react js. And I learned how to work on a group, set priorities and many other skills."
         />
         <Col
             title="Smarppy"
