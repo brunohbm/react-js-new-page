@@ -8,14 +8,16 @@ import ContactButton from './components/ContactButton';
 import ControlButtons from './components/ControlButtons';
 
 import MainPage from './pages/MainPage';
+import CarrerPage from './pages/CarrerPage';
 import PortfolioPage from './pages/PortfolioPage';
 
 const App = () => {
 	const render = {
 		intro: props => <MainPage {...props} />,
+		carrer: props => <CarrerPage {...props} />,
 		portfolio: props => <PortfolioPage {...props} />,
 	};
-	const [actualState, setActualState] = useState('portfolio');
+	const [actualState, setActualState] = useState('carrer');
 	const [onTransition, setOnTransition] = useState(false);
 
 	const pageProps = {
