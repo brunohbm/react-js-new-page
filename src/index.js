@@ -17,7 +17,7 @@ const App = () => {
 		carrer: props => <CarrerPage {...props} />,
 		portfolio: props => <PortfolioPage {...props} />,
 	};
-	const [actualState, setActualState] = useState('carrer');
+	const [actualState, setActualState] = useState('portfolio');
 	const [onTransition, setOnTransition] = useState(false);
 
 	const pageProps = {

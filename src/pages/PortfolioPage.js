@@ -16,7 +16,7 @@ const PortfolioPage = () => {
                     {`${actualProject + 1}/${projects.length}`}
                 </div>
                 <div className="total-project-label">
-                    Projects
+                    PROJECTS
                 </div>
             </div>
         </div>
