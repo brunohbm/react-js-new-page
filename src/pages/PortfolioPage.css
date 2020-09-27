@@ -42,3 +42,59 @@
     0% { height: 0%;  }
     100% { height: 100%;  }
 }
+
+.portfolio-page .projects-carousel {
+    top: 22%;
+    right: 0;
+    position: fixed;
+    width: fit-content;
+}
+
+.portfolio-page .projects-carousel .project img {
+    height: 100%;
+}
+
+.portfolio-page .projects-carousel .project {
+    height: 350px;
+    position: fixed;    
+    -webkit-transition: right 1s, transform 1s, height 1s ease-in-out;
+    -moz-transition: right 1s, transform 1s, height 1s ease-in-out;
+    -o-transition: right 1s, transform 1s, height 1s ease-in-out;
+    -ms-transition: right 1s, transform 1s, height 1s ease-in-out;
+    transition: right 1s, transform 1s, height 1s ease-in-out;
+}
+
+.portfolio-page .projects-carousel .project:hover {
+    cursor: pointer;
+}
+
+.portfolio-page .projects-carousel .active:hover {
+    cursor: unset;
+}
+
+.portfolio-page .projects-carousel .project.right-0 {
+    height: 280px;
+    right: -1050px;
+}
+
+.portfolio-page .projects-carousel .project.right-1 {
+    height: 280px;
+    right: -409px;
+}
+
+.portfolio-page .projects-carousel .project.left-0 {
+    height: 280px;
+    right: 0px;
+    transform: translate(-100vw, 0px);
+}
+
+.portfolio-page .projects-carousel .project.left-1 {
+    height: 280px;
+    right: -70px;
+    transform: translate(-100vw, 0px);
+}
+
+.portfolio-page .projects-carousel .project.active {
+    right: 50%;
+    transform: translate(50%, 0px);
+}
