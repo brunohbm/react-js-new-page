@@ -5,27 +5,69 @@ import './PortfolioPage.css';
 const projects = [
     {
         title: 'TURN CARD',
-        image: "https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png",        
+        images: [
+            "https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png",
+            "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg",
+            "https://cdn.pixabay.com/photo/2015/02/24/15/41/dog-647528__340.jpg",
+            "https://images.pexels.com/photos/956981/milky-way-starry-sky-night-sky-star-956981.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR0AnQUza0zwKklcP9bASAX5JRS_m08RouqWA&usqp=CAU",
+            "https://dynaimage.cdn.cnn.com/cnn/c_fill,g_auto,w_1200,h_675,ar_16:9/https%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F191120053137-03-milky-way-images-australia.jpg"
+        ],        
     },
     {
         title: 'TURN CARD',
-        image: "https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png",        
+        images: [
+            "https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png",
+            "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg",
+            "https://cdn.pixabay.com/photo/2015/02/24/15/41/dog-647528__340.jpg",
+            "https://images.pexels.com/photos/956981/milky-way-starry-sky-night-sky-star-956981.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR0AnQUza0zwKklcP9bASAX5JRS_m08RouqWA&usqp=CAU",
+            "https://dynaimage.cdn.cnn.com/cnn/c_fill,g_auto,w_1200,h_675,ar_16:9/https%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F191120053137-03-milky-way-images-australia.jpg"
+        ], 
     },
     {
         title: 'TURN CARD',
-        image: "https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png",        
+        images: [
+            "https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png",
+            "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg",
+            "https://cdn.pixabay.com/photo/2015/02/24/15/41/dog-647528__340.jpg",
+            "https://images.pexels.com/photos/956981/milky-way-starry-sky-night-sky-star-956981.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR0AnQUza0zwKklcP9bASAX5JRS_m08RouqWA&usqp=CAU",
+            "https://dynaimage.cdn.cnn.com/cnn/c_fill,g_auto,w_1200,h_675,ar_16:9/https%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F191120053137-03-milky-way-images-australia.jpg"
+        ], 
     },
     {
         title: 'TURN CARD',
-        image: "https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png",        
+        images: [
+            "https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png",
+            "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg",
+            "https://cdn.pixabay.com/photo/2015/02/24/15/41/dog-647528__340.jpg",
+            "https://images.pexels.com/photos/956981/milky-way-starry-sky-night-sky-star-956981.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR0AnQUza0zwKklcP9bASAX5JRS_m08RouqWA&usqp=CAU",
+            "https://dynaimage.cdn.cnn.com/cnn/c_fill,g_auto,w_1200,h_675,ar_16:9/https%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F191120053137-03-milky-way-images-australia.jpg"
+        ],
     },
     {
         title: 'TURN CARD',
-        image: "https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png",        
+        images: [
+            "https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png",
+            "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg",
+            "https://cdn.pixabay.com/photo/2015/02/24/15/41/dog-647528__340.jpg",
+            "https://images.pexels.com/photos/956981/milky-way-starry-sky-night-sky-star-956981.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR0AnQUza0zwKklcP9bASAX5JRS_m08RouqWA&usqp=CAU",
+            "https://dynaimage.cdn.cnn.com/cnn/c_fill,g_auto,w_1200,h_675,ar_16:9/https%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F191120053137-03-milky-way-images-australia.jpg"
+        ],
     },
     {
         title: 'TURN CARD',
-        image: "https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png",        
+        images: [
+            "https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png",
+            "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg",
+            "https://cdn.pixabay.com/photo/2015/02/24/15/41/dog-647528__340.jpg",
+            "https://images.pexels.com/photos/956981/milky-way-starry-sky-night-sky-star-956981.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR0AnQUza0zwKklcP9bASAX5JRS_m08RouqWA&usqp=CAU",
+            "https://dynaimage.cdn.cnn.com/cnn/c_fill,g_auto,w_1200,h_675,ar_16:9/https%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F191120053137-03-milky-way-images-australia.jpg"
+        ],
     },
 ];
 
@@ -52,6 +94,11 @@ const PortfolioPage = () => {
         return 'right-1';
     }    
 
+    const getAnimationDelay = (project, index) => ({
+        animationDelay: `${((project.images.length - 1) - index) * 6}s`,
+        // https://www.google.com/search?sxsrf=ALeKk03quFTq86PGYXrSa6wY_IoF65-F3A%3A1601342674591&ei=0oxyX_rYI7fZ5OUP-4ybmAU&q=++Crossfading+Images+css&oq=++Crossfading+Images+css&gs_lcp=CgZwc3ktYWIQAzICCAAyBggAEAgQHjoGCAAQBxAeOggIABAIEAcQHlCKLVi3L2D4MmgAcAJ4AIABfogB7AGSAQMwLjKYAQCgAQKgAQGqAQdnd3Mtd2l6wAEB&sclient=psy-ab&ved=0ahUKEwj6iaGqmo3sAhW3LLkGHXvGBlMQ4dUDCA0&uact=5
+    })
+
     return (
         <div className="portfolio-page">
             <div className="total-project-wrapper">
@@ -69,9 +116,14 @@ const PortfolioPage = () => {
                             className={`project ${getProjectClass(index, actualProject)}`} 
                             onClick={() => { setActualProject(index); }}
                         >
-                            <img
-                                src={project.image}
-                            />
+                            {
+                                project.images.map((image, index) => (
+                                    <img
+                                        src={image}
+                                        style={getAnimationDelay(project, index)}
+                                    />
+                                ))
+                            }                            
                         </div>
                     ))
                 }

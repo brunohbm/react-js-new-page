@@ -52,10 +52,13 @@
 
 .portfolio-page .projects-carousel .project img {
     height: 100%;
+    width: 100%;
+    position: absolute;
 }
 
 .portfolio-page .projects-carousel .project {
-    height: 350px;
+    height: 390px;
+    width: 750px;
     position: fixed;    
     -webkit-transition: right 1s, transform 1s, height 1s ease-in-out;
     -moz-transition: right 1s, transform 1s, height 1s ease-in-out;
@@ -79,7 +82,7 @@
 
 .portfolio-page .projects-carousel .project.right-1 {
     height: 280px;
-    right: -409px;
+    right: -682px;
 }
 
 .portfolio-page .projects-carousel .project.left-0 {
@@ -97,4 +100,30 @@
 .portfolio-page .projects-carousel .project.active {
     right: 50%;
     transform: translate(50%, 0px);
+}
+
+.portfolio-page .projects-carousel .project.active img {
+    animation-name: imageFadeAnimation;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 35s;
+    animation-direction: alternate;
+}
+
+@keyframes imageFadeAnimation {
+    0% {
+        opacity:1;
+    }
+    10% {
+        opacity:1;
+    }
+    15% {
+        opacity:0;
+    }
+    93% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
 }
