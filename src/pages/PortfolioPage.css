@@ -57,18 +57,21 @@
 }
 
 .portfolio-page .projects-carousel .project {
+    opacity: 0.47;
     height: 390px;
     width: 750px;
-    position: fixed;    
-    -webkit-transition: right 1s, transform 1s, height 1s ease-in-out;
-    -moz-transition: right 1s, transform 1s, height 1s ease-in-out;
-    -o-transition: right 1s, transform 1s, height 1s ease-in-out;
-    -ms-transition: right 1s, transform 1s, height 1s ease-in-out;
-    transition: right 1s, transform 1s, height 1s ease-in-out;
+    position: fixed;
+    background-color: var(--secundary-color);
+    -webkit-transition: right 1s, transform 1s, height 1s, opacity 1s ease-in-out;
+    -moz-transition: right 1s, transform 1s, height 1s, opacity 1s ease-in-out;
+    -o-transition: right 1s, transform 1s, height 1s, opacity 1s ease-in-out;
+    -ms-transition: right 1s, transform 1s, height 1s, opacity 1s ease-in-out;
+    transition: right 1s, transform 1s, height 1s, opacity 1s ease-in-out;
 }
 
 .portfolio-page .projects-carousel .project:hover {
     cursor: pointer;
+    opacity: 0.70;
 }
 
 .portfolio-page .projects-carousel .active:hover {
@@ -85,6 +88,10 @@
     right: -682px;
 }
 
+.portfolio-page .projects-carousel .project.right-1:hover {
+    right: -673px;
+}
+
 .portfolio-page .projects-carousel .project.left-0 {
     height: 280px;
     right: 0px;
@@ -97,30 +104,40 @@
     transform: translate(-100vw, 0px);
 }
 
+.portfolio-page .projects-carousel .project.left-1:hover {
+    right: -79px;
+}
+
 .portfolio-page .projects-carousel .project.active {
+    opacity: 1;
     right: 50%;
     transform: translate(50%, 0px);
 }
 
 .portfolio-page .projects-carousel .project.active img {
+    opacity:1;
     animation-name: imageFadeAnimation;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
-    animation-duration: 35s;
-    animation-direction: alternate;
+    animation-duration: 42s;
+}
+
+.portfolio-page .projects-carousel .project.active:hover img {
+    animation-play-state: paused;
+    cursor: grab;
 }
 
 @keyframes imageFadeAnimation {
     0% {
         opacity:1;
     }
-    10% {
+    11.9047619047619% {
         opacity:1;
     }
-    15% {
+    16.66666666666667% {
         opacity:0;
     }
-    93% {
+    95.23809523809524% {
         opacity:0;
     }
     100% {

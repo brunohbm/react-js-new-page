@@ -95,8 +95,7 @@ const PortfolioPage = () => {
     }    
 
     const getAnimationDelay = (project, index) => ({
-        animationDelay: `${((project.images.length - 1) - index) * 6}s`,
-        // https://www.google.com/search?sxsrf=ALeKk03quFTq86PGYXrSa6wY_IoF65-F3A%3A1601342674591&ei=0oxyX_rYI7fZ5OUP-4ybmAU&q=++Crossfading+Images+css&oq=++Crossfading+Images+css&gs_lcp=CgZwc3ktYWIQAzICCAAyBggAEAgQHjoGCAAQBxAeOggIABAIEAcQHlCKLVi3L2D4MmgAcAJ4AIABfogB7AGSAQMwLjKYAQCgAQKgAQGqAQdnd3Mtd2l6wAEB&sclient=psy-ab&ved=0ahUKEwj6iaGqmo3sAhW3LLkGHXvGBlMQ4dUDCA0&uact=5
+        animationDelay: `${((project.images.length - 1) - index) * 7}s`,        
     })
 
     return (
