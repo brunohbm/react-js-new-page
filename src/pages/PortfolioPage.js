@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import './PortfolioPage.css';
+import arrow from '../../assets/images/right-arrow.svg';
 
 const projects = [
     {
@@ -115,6 +116,9 @@ const PortfolioPage = () => {
                             className={`project ${getProjectClass(index, actualProject)}`} 
                             onClick={() => { setActualProject(index); }}
                         >
+                            <div className="title">
+                                {project.title}
+                            </div>
                             {
                                 project.images.map((image, index) => (
                                     <img
@@ -122,7 +126,13 @@ const PortfolioPage = () => {
                                         style={getAnimationDelay(project, index)}
                                     />
                                 ))
-                            }                            
+                            }      
+                            <div className="info">
+                                
+                                <div className="expand-button">
+                                    <img src={arrow} />
+                                </div>
+                            </div>                      
                         </div>
                     ))
                 }

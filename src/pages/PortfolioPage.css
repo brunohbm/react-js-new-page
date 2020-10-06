@@ -12,7 +12,7 @@
     letter-spacing: 6px;
     font-weight: 500;
 
-    animation: showTopText 1.2s;
+    animation: showTopText var(--animation-fade-time);
     animation-delay: 0.5s;
     animation-fill-mode: forwards;
     width: 0%;
@@ -25,7 +25,7 @@
     letter-spacing: 0.5px;
     font-weight: 500;
 
-    animation: showBottomText 1.2s;
+    animation: showBottomText var(--animation-fade-time);
     animation-delay: 0.5s;
     animation-fill-mode: forwards;
     height: 0%;
@@ -34,13 +34,15 @@
 }
 
 @keyframes showTopText {
-    0% { width: 0%;  }
-    100% { width: 200%;  }
+    0% { width: 0%; opacity: 0; }
+    70% { width: 200%; }
+    100% { width: 200%; opacity: 1; }
 }
 
 @keyframes showBottomText {
-    0% { height: 0%;  }
-    100% { height: 100%;  }
+    0% { height: 0%; opacity: 0; }
+    70% { height: 100%; }
+    100% { height: 100%; opacity: 1; }
 }
 
 .portfolio-page .projects-carousel {
@@ -50,7 +52,7 @@
     width: fit-content;
 }
 
-.portfolio-page .projects-carousel .project img {
+.portfolio-page .projects-carousel .project > img {
     height: 100%;
     width: 100%;
     position: absolute;
@@ -59,7 +61,9 @@
 .portfolio-page .projects-carousel .project {
     opacity: 0.47;
     height: 390px;
-    width: 750px;
+    width: 700px;
+    top: 50%;
+    transform: translate(0px, -68%);
     position: fixed;
     background-color: var(--secundary-color);
     -webkit-transition: right 1s, transform 1s, height 1s, opacity 1s ease-in-out;
@@ -67,6 +71,70 @@
     -o-transition: right 1s, transform 1s, height 1s, opacity 1s ease-in-out;
     -ms-transition: right 1s, transform 1s, height 1s, opacity 1s ease-in-out;
     transition: right 1s, transform 1s, height 1s, opacity 1s ease-in-out;
+}
+
+.portfolio-page .projects-carousel .project .title {
+    left: 0;
+    top: 0px;
+    font-size: 65px;
+    line-height: 65px;
+    position: absolute;
+    color: var(--primary-color);
+    font-family: 'Cormorant Garamond';
+    opacity: 0;
+    -webkit-transition: opacity 2.5s, top 1.2s ease;
+    -moz-transition: opacity 2.5s, top 1.2s ease;
+    -o-transition: opacity 2.5s, top 1.2s ease;
+    -ms-transition: opacity 2.5s, top 1.2s ease;
+    transition: opacity 2.5s, top 1.2s ease;
+}
+
+.portfolio-page .projects-carousel .project.active .title {
+    opacity: 1;
+    top: -70px;
+}
+
+.portfolio-page .projects-carousel .project .info {
+    position: absolute;
+    bottom: -9px;
+    right: -9px;
+    height: 37px;
+    width: 37px;
+    background-color: var(--primary-color);
+    -webkit-transition: width 1.3s, height 1.3s;
+    -moz-transition: width 1.3s, height 1.3s;
+    -o-transition: width 1.3s, height 1.3s;
+    -ms-transition: width 1.3s, height 1.3s;
+    transition: width 1.3s, height 1.3s;
+}
+
+.portfolio-page .projects-carousel .project .info:hover {
+    height: 345px;
+    width: 695px;
+    cursor: pointer;
+}
+
+.portfolio-page .projects-carousel .project .info .expand-button img {
+    height: 25px;
+    width: 25px;
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+    transform: rotate(-137deg);
+    opacity: 0.65;
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    -ms-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
+}
+
+.portfolio-page .projects-carousel .project .info:hover .expand-button img  {
+    opacity: 0;
+}
+
+.portfolio-page .projects-carousel .project.active .info {
+    opacity: 1;
 }
 
 .portfolio-page .projects-carousel .project:hover {
@@ -80,28 +148,28 @@
 
 .portfolio-page .projects-carousel .project.right-0 {
     height: 280px;
-    right: -1050px;
+    right: -1100px;
 }
 
 .portfolio-page .projects-carousel .project.right-1 {
     height: 280px;
-    right: -682px;
+    right: -632px;
 }
 
 .portfolio-page .projects-carousel .project.right-1:hover {
-    right: -673px;
+    right: -623px;
 }
 
 .portfolio-page .projects-carousel .project.left-0 {
     height: 280px;
-    right: 0px;
-    transform: translate(-100vw, 0px);
+    right: 200px;
+    transform: translate(-100vw, -68%);
 }
 
 .portfolio-page .projects-carousel .project.left-1 {
     height: 280px;
     right: -70px;
-    transform: translate(-100vw, 0px);
+    transform: translate(-100vw, -68%);
 }
 
 .portfolio-page .projects-carousel .project.left-1:hover {
@@ -111,10 +179,12 @@
 .portfolio-page .projects-carousel .project.active {
     opacity: 1;
     right: 50%;
-    transform: translate(50%, 0px);
+    top: 50%;
+    transform: translate(50%, -50%);
+    height: 350px;
 }
 
-.portfolio-page .projects-carousel .project.active img {
+.portfolio-page .projects-carousel .project.active > img {
     opacity:1;
     animation-name: imageFadeAnimation;
     animation-timing-function: ease-in-out;
@@ -122,7 +192,7 @@
     animation-duration: 42s;
 }
 
-.portfolio-page .projects-carousel .project.active:hover img {
+.portfolio-page .projects-carousel .project.active:hover > img {
     animation-play-state: paused;
     cursor: grab;
 }
