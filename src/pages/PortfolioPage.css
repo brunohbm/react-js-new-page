@@ -21,7 +21,7 @@
 
 .portfolio-page .total-project-label {
     color: var(--primary-color);
-    font-size: 14px;
+    font-size: 15px;
     letter-spacing: 0.5px;
     font-weight: 500;
 
@@ -53,39 +53,73 @@
 }
 
 .portfolio-page .projects-carousel .project .info .technologies .tecnologie-title {
-    bottom: 20px;
     right: 23px;
-    font-size: 65px;
-    line-height: 40px;
+    font-size: 45px;
+    line-height: 45px;
     position: absolute;
     color: var(--backgroud-colo);
     font-family: 'Cormorant Garamond';
-}
-
-.portfolio-page .projects-carousel .project .info .technologies .tecnologie-title {
     opacity: 0;
     z-index: -10;
-    animation: outTechnology var(--animation-fade-time) ease forwards;
-    -webkit-animation: outTechnology var(--animation-fade-time) ease forwards;
+    top: -40px;
 }
 
 .portfolio-page .projects-carousel .project .info:hover .technologies .tecnologie-title {
+    top: unset;
+    bottom: 15px;
     opacity: 1;
     z-index: 5;
     animation: inTechnology var(--animation-fade-time) ease forwards;
     -webkit-animation: inTechnology var(--animation-fade-time) ease forwards;
 }
 
-@keyframes outTechnology {
-    0% {
-        opacity: 1;
-    }
-    10% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 0;
-    }
+.portfolio-page .projects-carousel .project .technologies .items {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    text-align: right;
+    display: inline-block;
+}
+
+.portfolio-page .projects-carousel .project .technologies .items .item {
+    height: 50px;
+    width: fit-content;
+    text-align: center;
+    padding-right: 20px;
+    display: inline-block;
+    font-family: 'Montserrat';
+    text-transform: uppercase;
+    font-size: 14px;
+    display: none;
+}
+
+.portfolio-page .projects-carousel .project .technologies .items .item:last-child {
+    padding-right: 27px;
+}
+
+.portfolio-page .projects-carousel .project .technologies .items .item .item-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1.8px solid var(--backgroud-color)
+}
+
+.portfolio-page .projects-carousel .project .technologies .items .item .item-image img {
+    width: 30px;
+    height: 30px;    
+}
+
+
+.portfolio-page .projects-carousel .project .info:hover .technologies .item {
+    display: inline-block;
+}
+
+.portfolio-page .projects-carousel .project .info:hover .technologies .items {
+    bottom: 60px;
+    opacity: 1;
+    z-index: 5;
+    animation: inTechnology var(--animation-fade-time) ease forwards;
+    -webkit-animation: inTechnology var(--animation-fade-time) ease forwards;
 }
 
 @keyframes inTechnology {
@@ -101,10 +135,6 @@
     100% {
         opacity: 1;
     }
-}
-
-.portfolio-page .projects-carousel .project .technologies .items {
-    
 }
 
 .portfolio-page .projects-carousel .project > img {
@@ -128,100 +158,12 @@
     transition: right 1s, transform 1s, height 1s, opacity 1s ease-in-out;
 }
 
-.portfolio-page .projects-carousel .project .title {
-    left: 0;
-    top: 0px;
-    font-size: 65px;
-    line-height: 65px;
-    position: absolute;
-    color: var(--primary-color);
-    font-family: 'Cormorant Garamond';
-    opacity: 0;
-    -webkit-transition: opacity 2.5s, top 1.2s ease;
-    -moz-transition: opacity 2.5s, top 1.2s ease;
-    -o-transition: opacity 2.5s, top 1.2s ease;
-    -ms-transition: opacity 2.5s, top 1.2s ease;
-    transition: opacity 2.5s, top 1.2s ease;
-}
-
-.portfolio-page .projects-carousel .project.active .title {
-    opacity: 1;
-    top: -70px;
-}
-
-.portfolio-page .projects-carousel .project .info {
-    position: absolute;
-    bottom: -9px;
-    right: -9px;
-    height: 37px;
-    width: 37px;
-    background-color: var(--primary-color);
-    -webkit-transition: width 1.3s, height 1.3s;
-    -moz-transition: width 1.3s, height 1.3s;
-    -o-transition: width 1.3s, height 1.3s;
-    -ms-transition: width 1.3s, height 1.3s;
-    transition: width 1.3s, height 1.3s;
-}
-
 .portfolio-page .projects-carousel .project.active .info:hover {
     height: 345px;
     width: 695px;
     cursor: pointer;
 }
 
-.portfolio-page .projects-carousel .project .info .descripion {
-    text-transform: uppercase;
-    font-family: 'Montserrat';
-    font-size: 15px;
-    padding: 20px 23px;
-    opacity: 0;
-    height: 0;
-    overflow: hidden;
-    -webkit-transition: opacity 1s ease;
-    -moz-transition: opacity 1s ease;
-    -o-transition: opacity 1s ease;
-    -ms-transition: opacity 1s ease;
-    transition: opacity 1s ease;
-}
-
-.portfolio-page .projects-carousel .project.active .info:hover .descripion {
-    opacity: 1;
-    height: auto;
-    overflow: unset;
-}
-
-
-.portfolio-page .projects-carousel .project .info .expand-button .arrow {
-    height: 25px;
-    width: 25px;
-    position: absolute;
-    bottom: 4px;
-    right: 4px;
-    transform: rotate(-137deg);
-    opacity: 0.65;
-    -webkit-transition: opacity 1s ease-in-out;
-    -moz-transition: opacity 1s ease-in-out;
-    -o-transition: opacity 1s ease-in-out;
-    -ms-transition: opacity 1s ease-in-out;
-    transition: opacity 1s ease-in-out;
-}
-
-.portfolio-page .projects-carousel .project.active .info:hover .expand-button .arrow  {
-    opacity: 0;
-}
-
-.portfolio-page .projects-carousel .project.active .info {
-    opacity: 1;
-}
-
-.portfolio-page .projects-carousel .project:hover {
-    cursor: pointer;
-    opacity: 0.70;
-}
-
-.portfolio-page .projects-carousel .active:hover {
-    cursor: unset;
-}
 
 .portfolio-page .projects-carousel .project.right-0 {
     height: 280px;
@@ -261,6 +203,182 @@
     height: 350px;
 }
 
+.portfolio-page .projects-carousel .project .title {
+    left: 0;
+    top: 0px;
+    font-size: 65px;
+    line-height: 65px;
+    position: absolute;
+    color: var(--primary-color);
+    font-family: 'Cormorant Garamond';
+    opacity: 0;
+    -webkit-transition: opacity 2.5s, top 1.2s ease;
+    -moz-transition: opacity 2.5s, top 1.2s ease;
+    -o-transition: opacity 2.5s, top 1.2s ease;
+    -ms-transition: opacity 2.5s, top 1.2s ease;
+    transition: opacity 2.5s, top 1.2s ease;
+}
+
+.portfolio-page .projects-carousel .project.active .title {
+    opacity: 1;
+    top: -70px;
+}
+
+.portfolio-page .projects-carousel .project .info {
+    position: absolute;
+    bottom: -9px;
+    right: -9px;
+    height: 37px;
+    width: 37px;
+    opacity: 0;
+    background-color: var(--primary-color);
+    -webkit-transition: width 1.3s, height 1.3s, opacity 1.3s;
+    -moz-transition: width 1.3s, height 1.3s, opacity 1.3s;
+    -o-transition: width 1.3s, height 1.3s, opacity 1.3s;
+    -ms-transition: width 1.3s, height 1.3s, opacity 1.3s;
+    transition: width 1.3s, height 1.3s, opacity 1.3s;
+}
+
+@media screen and (max-width: 950px) {
+    .portfolio-page .projects-carousel .project {        
+        width: 460px;
+    }
+
+    
+    .portfolio-page .projects-carousel .project.active .info:hover {        
+        width: 480px;        
+    }
+
+    .portfolio-page .projects-carousel .project.right-1 {
+        height: 280px;
+        right: -408px;
+    }
+    
+    .portfolio-page .projects-carousel .project.right-1:hover {
+        right: -400px;
+    }
+    
+    .portfolio-page .projects-carousel .project.left-0 {
+        height: 280px;
+        right: 400px;
+        transform: translate(-100vw, -68%);
+    }
+    
+    .portfolio-page .projects-carousel .project.left-1 {
+        height: 280px;
+        right: -50px;
+        transform: translate(-100vw, -68%);
+    }
+    
+    .portfolio-page .projects-carousel .project.left-1:hover {
+        right: -58px;
+    }
+}
+
+@media screen and (max-width: 610px) {
+    .portfolio-page .projects-carousel .project, 
+    .portfolio-page .projects-carousel .project.active  {        
+        height: 180px;
+        width: 50%;
+    }
+
+    .portfolio-page .projects-carousel .project.right-1 {
+        height: 180px;
+        right: -208px;
+    }
+    
+    .portfolio-page .projects-carousel .project.right-1:hover {
+        right: -200px;
+    }
+    
+    .portfolio-page .projects-carousel .project.left-0 {
+        height: 180px;
+        right: 200px;
+        transform: translate(-100vw, -68%);
+    }
+    
+    .portfolio-page .projects-carousel .project.left-1 {
+        height: 180px;
+        right: -39px;
+        transform: translate(-100vw, -68%);
+    }
+    
+    .portfolio-page .projects-carousel .project.left-1:hover {
+        right: -58px;
+    }
+
+    .portfolio-page .projects-carousel .project .title {
+        font-size: 35px;
+        line-height: 35px;
+    }
+
+    .portfolio-page .projects-carousel .project.active .title {
+        opacity: 1;
+        top: -40px;
+    }
+
+    .portfolio-page .projects-carousel .project .info {
+       display: none;
+    }
+}
+
+.portfolio-page .projects-carousel .project.active .info {
+    opacity: 1;
+}
+
+.portfolio-page .projects-carousel .project .info .descripion {
+    text-transform: uppercase;
+    font-family: 'Montserrat';
+    font-size: 15px;
+    padding: 20px 23px;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    -webkit-transition: opacity 1s ease;
+    -moz-transition: opacity 1s ease;
+    -o-transition: opacity 1s ease;
+    -ms-transition: opacity 1s ease;
+    transition: opacity 1s ease;
+}
+
+.portfolio-page .projects-carousel .project.active .info:hover .descripion {
+    opacity: 1;
+    height: auto;
+    overflow: unset;
+}
+
+.portfolio-page .projects-carousel .project .info .expand-button .arrow {
+    height: 25px;
+    width: 25px;
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+    transform: rotate(-137deg);
+    opacity: 0.65;
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    -ms-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
+}
+
+.portfolio-page .projects-carousel .project.active .info:hover .expand-button .arrow  {
+    opacity: 0;
+}
+
+.portfolio-page .projects-carousel .project.active .info {
+    opacity: 1;
+}
+
+.portfolio-page .projects-carousel .project:not(.active):hover {
+    cursor: pointer;
+    opacity: 0.70;
+}
+
+.portfolio-page .projects-carousel .active:hover {
+    cursor: unset;
+}
+
 .portfolio-page .projects-carousel .project.active > img {
     opacity:1;
     animation-name: imageFadeAnimation;
@@ -289,5 +407,53 @@
     }
     100% {
         opacity:1;
+    }
+}
+
+.main-container.on-transition.portfolio .portfolio-page .total-project-wrapper,
+.main-container.on-transition.portfolio .portfolio-page .projects-carousel .project.active .title,
+.main-container.on-transition.portfolio .portfolio-page .projects-carousel .project.active .info  
+{
+    animation-name: fadeOutAnimation;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-duration: 1.5s;
+}
+
+.main-container.on-transition.portfolio .portfolio-page .projects-carousel .project.left-0,
+.main-container.on-transition.portfolio .portfolio-page .projects-carousel .project.left-1
+{
+    right: 0px;    
+}
+
+.main-container.on-transition.portfolio .portfolio-page .projects-carousel .project.right-0,
+.main-container.on-transition.portfolio .portfolio-page .projects-carousel .project.right-1
+{
+    right: -56vw;    
+}
+
+
+.main-container.on-transition.portfolio .portfolio-page .projects-carousel .project.active {
+    animation-name: zoomInAnimation;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-duration: 3s;
+}
+
+@keyframes zoomInAnimation {
+    0% {
+        opacity: 1;
+    }   
+    100% {
+        opacity: 0;        
+    }
+}
+
+@keyframes fadeOutAnimation {
+    0% {
+        opacity: 1;
+    }    
+    100% {
+        opacity: 0;
     }
 }
