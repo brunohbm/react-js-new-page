@@ -6,7 +6,7 @@
     top: 50%;
     opacity: 0;
     transform: translate(-50%, -50%);
-    animation: fadeInOut calc(var(--animation-fade-time) * 1.75) ease-in forwards;
+    animation: fadeInOut calc(var(--animation-fade-time) * 1.50) ease-in forwards;
 }
 
 .col {

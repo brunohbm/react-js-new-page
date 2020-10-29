@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useCallback } from 'react';
 import ReactDOM from 'react-dom';
 import './styles/fonts.css';
 import './index.css';
@@ -11,12 +11,13 @@ import MainPage from './pages/MainPage';
 import CarrerPage from './pages/CarrerPage';
 import PortfolioPage from './pages/PortfolioPage';
 
+const render = {
+	intro: props => <MainPage {...props} />,
+	carrer: props => <CarrerPage {...props} />,
+	portfolio: props => <PortfolioPage {...props} />,
+};
+
 const App = () => {
-	const render = {
-		intro: props => <MainPage {...props} />,
-		carrer: props => <CarrerPage {...props} />,
-		portfolio: props => <PortfolioPage {...props} />,
-	};
 	const [actualState, setActualState] = useState('portfolio');
 	const [onTransition, setOnTransition] = useState(false);
 
@@ -40,27 +41,26 @@ const App = () => {
 		return nextPage;
 	}, [actualState]);
 
-	const initTransition = useCallback((amount, callback) => {
-		const nextPage = findKey(amount);		
+	const initTransition = useCallback((nextPage, callback) => {
 		setOnTransition(true);		
 
 		setTimeout(() => {
 			setActualState(nextPage);
+			setOnTransition(false);
 
 			setTimeout(() => {
 				callback();
-				setOnTransition(false);
 			}, 3000);
 		}, 3500);
 	}, []);
 
-	const onUp = useCallback(resetAction => {
-		initTransition(-1, resetAction);
-	}, []);
+	const onUp = resetAction => {
+		initTransition(findKey(-1), resetAction);
+	};
 
-	const onDown = useCallback(resetAction => {
-		initTransition(1, resetAction);
-	}, []);
+	const onDown = resetAction => {
+		initTransition(findKey(1), resetAction);
+	};
 
 	return (
 		<div id="mainContainer" className={`main-container ${onTransition ? 'on-transition' : ''} ${actualState}`}>			

@@ -13,7 +13,7 @@
     font-weight: 500;
 
     animation: showTopText var(--animation-fade-time);
-    animation-delay: 0.5s;
+    animation-delay: 8s;
     animation-fill-mode: forwards;
     width: 0%;
     overflow: hidden;
@@ -26,7 +26,7 @@
     font-weight: 500;
 
     animation: showBottomText var(--animation-fade-time);
-    animation-delay: 0.5s;
+    animation-delay: 6.5s;
     animation-fill-mode: forwards;
     height: 0%;
     overflow: hidden;
@@ -50,6 +50,10 @@
     right: 0;
     position: fixed;
     width: fit-content;
+    animation-name: fadeInAnimation;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-duration: 5s;
 }
 
 .portfolio-page .projects-carousel .project .info .technologies .tecnologie-title {
@@ -57,7 +61,7 @@
     font-size: 45px;
     line-height: 45px;
     position: absolute;
-    color: var(--backgroud-colo);
+    color: var(--backgroud-color);
     font-family: 'Cormorant Garamond';
     opacity: 0;
     z-index: -10;
@@ -222,6 +226,10 @@
 .portfolio-page .projects-carousel .project.active .title {
     opacity: 1;
     top: -70px;
+    animation-name: fadeInTextAnimation;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-duration: 7s;
 }
 
 .portfolio-page .projects-carousel .project .info {
@@ -322,10 +330,6 @@
     }
 }
 
-.portfolio-page .projects-carousel .project.active .info {
-    opacity: 1;
-}
-
 .portfolio-page .projects-carousel .project .info .descripion {
     text-transform: uppercase;
     font-family: 'Montserrat';
@@ -368,6 +372,10 @@
 
 .portfolio-page .projects-carousel .project.active .info {
     opacity: 1;
+    animation-name: fadeInInfo;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    animation-duration: 7s;
 }
 
 .portfolio-page .projects-carousel .project:not(.active):hover {
@@ -455,5 +463,45 @@
     }    
     100% {
         opacity: 0;
+    }
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }   
+    20% {
+        opacity: 0;
+    }   
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInTextAnimation {
+    0% {
+        top: 0px;
+        opacity: 0;
+    }   
+    50% {
+        top: 0px;
+        opacity: 0;
+    }   
+    100% {
+        opacity: 1;
+        top: -70px;
+    }
+}
+
+
+@keyframes fadeInInfo {
+    0% {        
+        opacity: 0;
+    }   
+    60% {
+        opacity: 0;
+    }   
+    100% {
+        opacity: 1;
     }
 }
