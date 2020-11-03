@@ -229,6 +229,10 @@
     animation-name: fadeInTextAnimation;
     animation-timing-function: ease-in-out;
     animation-fill-mode: forwards;
+    animation-duration: 2s;
+}
+
+.portfolio-page.first-time .projects-carousel .project.active .title {
     animation-duration: 7s;
 }
 
@@ -375,6 +379,10 @@
     animation-name: fadeInInfo;
     animation-timing-function: ease;
     animation-fill-mode: forwards;
+    animation-duration: 2s;
+}
+
+.portfolio-page.first-time .projects-carousel .project.active .info {
     animation-duration: 7s;
 }
 

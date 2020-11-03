@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import './PortfolioPage.css';
 import arrow from '../../assets/images/right-arrow.svg';
@@ -72,6 +72,13 @@ const projects = [
 
 const PortfolioPage = () => {
     const [actualProject, setActualProject] = useState(0);
+    const [firstTime, setFirstTime] = useState(true);
+
+    useEffect(() => {
+        if(actualProject > 0 && firstTime) {
+            setFirstTime(false);
+        }
+    }, [actualProject]);
 
     const getProjectClass = (index, centeredIndex) => {
         if(centeredIndex === index) {
@@ -98,7 +105,7 @@ const PortfolioPage = () => {
     })
 
     return (
-        <div className="portfolio-page">
+        <div className={`portfolio-page ${firstTime ? 'first-time' : ''}`}>
             <div className="total-project-wrapper">
                 <div className="total-project-values">
                     {`${actualProject + 1}/${projects.length}`}
