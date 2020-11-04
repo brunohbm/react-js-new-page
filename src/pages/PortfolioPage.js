@@ -106,6 +106,9 @@ const PortfolioPage = () => {
 
     return (
         <div className={`portfolio-page ${firstTime ? 'first-time' : ''}`}>
+            <div className="portfolio-title">
+                PORTFOLIO
+            </div>
             <div className="total-project-wrapper">
                 <div className="total-project-values">
                     {`${actualProject + 1}/${projects.length}`}
@@ -118,6 +121,7 @@ const PortfolioPage = () => {
                 {
                     projects.map((project, index) => (
                         <div 
+                            key={project.title}
                             className={`project ${getProjectClass(index, actualProject)}`} 
                             onClick={() => { setActualProject(index); }}
                         >

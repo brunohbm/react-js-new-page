@@ -30,6 +30,8 @@ const App = () => {
 	}
 
 	const findKey = useCallback(amount => {
+		console.debug({ amount });
+		console.debug({ actualState });
 		const keys = Object.keys(render);
 		var nextPage = '';
 		keys.forEach((key, position) => {
@@ -41,8 +43,9 @@ const App = () => {
 		return nextPage;
 	}, [actualState]);
 
-	const initTransition = useCallback((nextPage, callback) => {
-		setOnTransition(true);		
+	const initTransition = useCallback((nextPage, callback, type) => {
+		setOnTransition(type);	
+		console.debug({ nextPage });
 
 		setTimeout(() => {
 			setActualState(nextPage);
@@ -55,15 +58,31 @@ const App = () => {
 	}, []);
 
 	const onUp = resetAction => {
-		initTransition(findKey(-1), resetAction);
+		initTransition(findKey(-1), resetAction, 'UP');
+	};
+	
+	const onDown = resetAction => {
+		initTransition(findKey(1), resetAction, 'DOWN');
 	};
 
-	const onDown = resetAction => {
-		initTransition(findKey(1), resetAction);
+	const getTransitionClass = () => {
+		if(onTransition) {
+			return onTransition === 'UP' ? 'up' : 'down';
+		}
+		return '';
 	};
 
 	return (
-		<div id="mainContainer" className={`main-container ${onTransition ? 'on-transition' : ''} ${actualState}`}>			
+		<div 
+			id="mainContainer" 
+			className={`main-container ${
+				onTransition ? 'on-transition' : ''
+			} ${
+				actualState
+			} ${
+				getTransitionClass()
+			}`}
+		>			
 			<Logo />
 			<ContactButton 
 				onClick={goToContactPage} 

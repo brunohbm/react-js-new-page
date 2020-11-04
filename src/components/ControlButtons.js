@@ -1,13 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 import './ControlButtons.css';
-
-let onHover = null;
-let percentAmount = 0;
-let isDisabled = false;
-let isScrollPositive = false;
-let changeTimeOut = () => {};
-let scrollTimeOut = () => {};
 
 const ControlButtons = ({ onUp, onDown, onTransition }) => {	
 	const [disabled, setDisabled] = useState(true);	
@@ -15,70 +8,84 @@ const ControlButtons = ({ onUp, onDown, onTransition }) => {
 	const [percentScroll, setPercentScroll] = useState(0.0);
 	const [percentActive, setPercentActive] = useState(false);
 
-	useEffect(() => { isDisabled = disabled; }, [disabled]);
+	let onHover = useRef(null);
+	let percentAmount = useRef(0);
+	let isDisabled = useRef(false);
+	let isScrollPositive = useRef(false);
+	let changeTimeOut = useRef(() => {});
+	let scrollTimeOut = useRef(() => {});
+	let down = useRef(onDown);
+	let up = useRef(onUp);
+
+	useEffect(() => {
+		down.current = onDown;
+		up.current = onUp;
+	}, [onDown, onUp])
+
+	useEffect(() => { isDisabled.current = disabled; }, [disabled]);
 
 	useEffect(() => { setDisabled(onTransition || disabled); }, [onTransition]);
 
 	useEffect(() => { 
-		scrollTimeOut = setTimeout(() => {
-			if(!isDisabled && percentAmount < 160) {
+		scrollTimeOut.current = setTimeout(() => {
+			if(!isDisabled.current && percentAmount.current < 160) {
 				setPercentScroll(0.0);
-				percentAmount = 0;
-				onHover = null;
+				percentAmount.current = 0;
+				onHover.current = null;
 			}
 		}, 1500);
 	}, [percentScroll]);
 
 	const onTransitionEnd = () => {
-		if(onHover) {
-			onHover(() => {
+		if(onHover.current) {
+			onHover.current(() => {
 				setDisabled(false);
 				setHasClick(false);
 				setPercentScroll(0.0);
 				setPercentActive(false);
-				onHover = null;
-				percentAmount = 0;
-				isDisabled = false;
-				isScrollPositive = false;
-				changeTimeOut = () => {};
-				scrollTimeOut = () => {};
+				onHover.current = null;
+				percentAmount.current = 0;
+				isDisabled.current = false;
+				isScrollPositive.current = false;
+				changeTimeOut.current = () => {};
+				scrollTimeOut.current = () => {};
 			});
 			setDisabled(true);			
 		}
 	}
 
 	const resetScroll = (state) => {
-		isScrollPositive = state;
-		percentAmount = 0;
+		isScrollPositive.current = state;
+		percentAmount.current = 0;
 	}
 
 	const increaseScroll = scrollFunction => {
-		clearTimeout(scrollTimeOut);
-		percentAmount += 7.3;
-		setPercentScroll(percentAmount);	
-		onHover = scrollFunction;
+		clearTimeout(scrollTimeOut.current);
+		percentAmount.current += 7.3;
+		setPercentScroll(percentAmount.current);	
+		onHover.current = scrollFunction;
 	}
 
 	const onWheel = scroll => {
-		if (isDisabled) return;
+		if (isDisabled.current) return;
 
 		if(scroll.deltaY > 0) {
-			if(!onDown) return;
+			if(!down.current) return;
 
-			if(!isScrollPositive) {				
+			if(!isScrollPositive.current) {				
 				resetScroll(true);				
 			}
 
-			increaseScroll(onDown);
+			increaseScroll(down.current);
 			return;
 		}
 
-		if(!onUp) return;
-		if(isScrollPositive) {
+		if(!up.current) return;
+		if(isScrollPositive.current) {
 			resetScroll(false);				
 		}
 
-		increaseScroll(onUp);
+		increaseScroll(up.current);
 	}
 	
 	useEffect(() => {
@@ -99,13 +106,13 @@ const ControlButtons = ({ onUp, onDown, onTransition }) => {
 		if (percentScroll) {
 			setPercentScroll(0);
 		}
-		clearTimeout(changeTimeOut);
-		onHover = null;
+		clearTimeout(changeTimeOut.current);
+		onHover.current = null;
 
 		if(newOnHover) {
-			changeTimeOut = setTimeout(() => {
+			changeTimeOut.current = setTimeout(() => {
 				setPercentActive(true);
-				onHover = newOnHover;
+				onHover.current = newOnHover;
 			}, percentActive ? 700 : 0);
 		}	
 		
@@ -114,14 +121,14 @@ const ControlButtons = ({ onUp, onDown, onTransition }) => {
 
 	const onClickUp = () => {
 		if(!onUp || disabled) return;
-		onHover = onUp;
+		onHover.current = onUp;
 		setHasClick(true);
 		setDisabled(true);
 	}
 
 	const onClickDown = () => {
 		if(!onDown || disabled) return;
-		onHover = onDown;
+		onHover.current = onDown;
 		setHasClick(true);
 		setDisabled(true);
 	}
@@ -157,8 +164,8 @@ const ControlButtons = ({ onUp, onDown, onTransition }) => {
 				</button>
 				<button 
 					className="down" 
-					disabled={disabled || !onDown}
 					onClick={onClickDown} 
+					disabled={disabled || !onDown}
 					onMouseEnter={() => { checkTimeOut(onDown); }}
 					onMouseLeave={() => { checkTimeOut(); }}
 				>

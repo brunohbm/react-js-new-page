@@ -13,7 +13,7 @@
     font-weight: 500;
 
     animation: showTopText var(--animation-fade-time);
-    animation-delay: 8s;
+    animation-delay: 16s;
     animation-fill-mode: forwards;
     width: 0%;
     overflow: hidden;
@@ -26,12 +26,37 @@
     font-weight: 500;
 
     animation: showBottomText var(--animation-fade-time);
-    animation-delay: 6.5s;
+    animation-delay: 15s;
     animation-fill-mode: forwards;
     height: 0%;
     overflow: hidden;
     position: absolute;
 }
+
+.portfolio-page .portfolio-title {
+    font-family: 'Cormorant Garamond';
+    font-size: 17vw;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    opacity: 0;
+    color: var(--secundary-color);
+    transform: translate(-50%, -50%);
+    animation: fadeInOut 6s ease forwards;
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
 
 @keyframes showTopText {
     0% { width: 0%; opacity: 0; }
@@ -53,7 +78,7 @@
     animation-name: fadeInAnimation;
     animation-timing-function: ease-in-out;
     animation-fill-mode: forwards;
-    animation-duration: 5s;
+    animation-duration: 20s;
 }
 
 .portfolio-page .projects-carousel .project .info .technologies .tecnologie-title {
@@ -226,14 +251,13 @@
 .portfolio-page .projects-carousel .project.active .title {
     opacity: 1;
     top: -70px;
-    animation-name: fadeInTextAnimation;
-    animation-timing-function: ease-in-out;
-    animation-fill-mode: forwards;
-    animation-duration: 2s;
 }
 
 .portfolio-page.first-time .projects-carousel .project.active .title {
-    animation-duration: 7s;
+    animation-duration: 15s;
+    animation-name: fadeInTextAnimation;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
 }
 
 .portfolio-page .projects-carousel .project .info {
@@ -363,11 +387,11 @@
     right: 4px;
     transform: rotate(-137deg);
     opacity: 0.65;
-    -webkit-transition: opacity 1s ease-in-out;
-    -moz-transition: opacity 1s ease-in-out;
-    -o-transition: opacity 1s ease-in-out;
-    -ms-transition: opacity 1s ease-in-out;
-    transition: opacity 1s ease-in-out;
+    -webkit-transition: opacity 1.5s ease-in-out;
+    -moz-transition: opacity 1.5s ease-in-out;
+    -o-transition: opacity 1.5s ease-in-out;
+    -ms-transition: opacity 1.5s ease-in-out;
+    transition: opacity 1.5s ease-in-out;
 }
 
 .portfolio-page .projects-carousel .project.active .info:hover .expand-button .arrow  {
@@ -376,14 +400,13 @@
 
 .portfolio-page .projects-carousel .project.active .info {
     opacity: 1;
-    animation-name: fadeInInfo;
-    animation-timing-function: ease;
-    animation-fill-mode: forwards;
-    animation-duration: 2s;
 }
 
 .portfolio-page.first-time .projects-carousel .project.active .info {
-    animation-duration: 7s;
+    animation-duration: 15s;
+    animation-name: fadeInInfo;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
 }
 
 .portfolio-page .projects-carousel .project:not(.active):hover {
@@ -426,14 +449,32 @@
     }
 }
 
-.main-container.on-transition.portfolio .portfolio-page .total-project-wrapper,
-.main-container.on-transition.portfolio .portfolio-page .projects-carousel .project.active .title,
-.main-container.on-transition.portfolio .portfolio-page .projects-carousel .project.active .info  
+.main-container.on-transition.portfolio.down .portfolio-page .total-project-wrapper,
+.main-container.on-transition.portfolio.down .portfolio-page .projects-carousel .project.active .title,
+.main-container.on-transition.portfolio.down .portfolio-page .projects-carousel .project.active .info  
 {
     animation-name: fadeOutAnimation;
     animation-timing-function: ease-in-out;
     animation-fill-mode: forwards;
     animation-duration: 1.5s;
+}
+
+.main-container.on-transition.portfolio.up .portfolio-page .total-project-wrapper,
+.main-container.on-transition.portfolio.up .portfolio-page .projects-carousel .project.active .title,
+.main-container.on-transition.portfolio.up .portfolio-page .projects-carousel .project.active .info  
+{
+    animation-name: fadeOutAnimation;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+}
+
+
+.main-container.on-transition.portfolio.up {
+    animation-name: fadeOutColorAnimation;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-duration: 3s;
 }
 
 .main-container.on-transition.portfolio .portfolio-page .projects-carousel .project.left-0,
@@ -473,6 +514,19 @@
         opacity: 0;
     }
 }
+
+@keyframes fadeOutColorAnimation {
+    0% {
+        background-color: var(--background-color);
+    }
+    86% {        
+        background-color: var(--background-color);
+    }
+    100% {        
+        background-color: var(--primary-color);
+    }
+}
+
 
 @keyframes fadeInAnimation {
     0% {
