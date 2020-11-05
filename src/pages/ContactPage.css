@@ -1,0 +1,15 @@
+.contact-page .left-bar {
+    width: 40px;
+    height: 57vh;
+    position: fixed; 
+    top: 50%;
+    transform: translate(0%, -50%);
+    background-color: var(--primary-color);
+    animation: leftBar var(--animation-fade-time) ease-in-out forwards;
+    -webkit-animation: leftBar var(--animation-fade-time) ease-in-out forwards;
+}
+
+@keyframes leftBar {
+    0% { width: 0px; opacity: 0; }    
+    100% { width: 40px; opacity: 1; }
+}

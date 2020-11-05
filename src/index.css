@@ -25,7 +25,7 @@ body {
     }
 }
 
-.main-container.on-transition.intro::after {
+.main-container.on-transition.intro.down::after {
     content: '';
     background-color: var(--primary-color);
     position: fixed;
