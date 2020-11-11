@@ -1,6 +1,7 @@
 .contact-page .left-bar {
     width: 40px;
-    height: 57vh;
+    text-transform: uppercase;
+    height: 68.5vh;
     position: fixed; 
     top: 50%;
     transform: translate(0%, -50%);
@@ -9,7 +10,124 @@
     -webkit-animation: leftBar var(--animation-fade-time) ease-in-out forwards;
 }
 
+.main-container.on-transition.contact.up .contact-page .left-bar {
+    animation: leftBarOut var(--animation-fade-time) ease-in-out forwards;
+    -webkit-animation: leftBarOut var(--animation-fade-time) ease-in-out forwards;
+}
+
+.contact-page .info-section {
+    opacity: 0;
+    width: 34vw;
+    font-family: 'Montserrat';
+    text-transform: uppercase;
+    font-size: 15px;
+    color: var(--secundary-color);
+    height: 68.5vh;
+    top: 50%;
+    left: 55px;
+    position: fixed; 
+    transform: translate(0%, -48.3%);
+    animation: infoSection var(--animation-fade-time) ease-in-out forwards;
+    -webkit-animation: infoSection var(--animation-fade-time) ease-in-out forwards;
+    animation-delay: calc(var(--animation-fade-time) * 0.6);
+}
+
+.main-container.on-transition.contact.up .contact-page .info-section {
+    animation: infoSectionOut calc(var(--animation-fade-time) * 0.5) ease-in-out forwards;
+    -webkit-animation: infoSectionOut calc(var(--animation-fade-time) * 0.5) ease-in-out forwards;
+}
+
+.contact-page .contact-section {    
+    top: 50%;
+    right: 0;
+    padding: 4.7vw;
+    font-size: 15px;
+    position: fixed; 
+    font-family: 'Montserrat';
+    text-transform: uppercase;
+    height: calc(68.5vh - 9.4vw);
+    transform: translate(0%, -50%);
+    background-color: var(--primary-color);
+    animation: contactSection var(--animation-fade-time) ease-in-out forwards;
+    -webkit-animation: contactSection var(--animation-fade-time) ease-in-out forwards;
+}
+
+.main-container.on-transition.contact.up .contact-page .contact-section {
+    animation: contactSectionOut var(--animation-fade-time) ease-in-out forwards;
+    -webkit-animation: contactSectionOut var(--animation-fade-time) ease-in-out forwards;
+}
+
+.contact-page .contact-section .title {
+    font-size: 65px;
+    line-height: 65px;
+    margin-bottom: 20px;
+    font-family: 'Cormorant Garamond';
+}
+
+.contact-page .social-media {
+    position: absolute;
+    bottom: 5vw;
+}
+
+.contact-page .social-media img {
+    height: 41px;
+    width: 41px;
+    margin-right: 20px;
+    -webkit-transition: filter 0.5s ease;
+    -moz-transition: filter 0.5s ease;
+    -o-transition: filter 0.5s ease;
+    -ms-transition: filter 0.5s ease;
+    transition: filter 0.5s ease;
+}
+
+.contact-page .contact-section .info,
+.contact-page .contact-section .title,
+.contact-page .contact-section .social-media {
+    opacity: 0;
+    animation: infoSection var(--animation-fade-time) ease-in-out forwards;
+    -webkit-animation: infoSection var(--animation-fade-time) ease-in-out forwards;
+    animation-delay: calc(var(--animation-fade-time) * 0.6);
+}
+
+.main-container.on-transition.contact.up .contact-page .contact-section .info,
+.main-container.on-transition.contact.up .contact-page .contact-section .title,
+.main-container.on-transition.contact.up .contact-page .contact-section .social-media 
+{
+    animation: infoSectionOut calc(var(--animation-fade-time) * 0.5) ease-in-out forwards;
+    -webkit-animation: infoSectionOut calc(var(--animation-fade-time) * 0.5) ease-in-out forwards;
+}
+
+
+.contact-page .social-media img:hover {
+    filter: invert(1);
+}
+
+@keyframes contactSection {
+    0% { width: 0px; opacity: 0; }    
+    100% { width: 37vw; opacity: 1; }
+}
+
+@keyframes infoSection {
+    0% { opacity: 0; }    
+    100% { opacity: 1; }
+}
+
 @keyframes leftBar {
     0% { width: 0px; opacity: 0; }    
     100% { width: 40px; opacity: 1; }
+}
+
+@keyframes leftBarOut {
+    0% { width: 40px; opacity: 1; }
+    100% { width: 0px; opacity: 0; }    
+}
+
+@keyframes infoSectionOut {
+    0% { opacity: 1; }    
+    100% { opacity: 0; }
+}
+
+@keyframes contactSectionOut {
+    0% { right: 0; opacity: 1; width: 37vw; }
+    100% { right: -50%; opacity: 0; width: 37vw; }    
 }

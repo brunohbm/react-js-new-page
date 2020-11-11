@@ -1,5 +1,6 @@
 .contact-button  {
     animation: fadeIn var(--animation-fade-time) linear forwards;
+    -webkit-animation: fadeIn var(--animation-fade-time) linear forwards;
     z-index: 4;
 }
 
@@ -21,11 +22,28 @@
 .contact-button:not(:disabled):hover {
     cursor: pointer;
     font-size: 13.5px;
-    border: 1px solid transparent;
-    
+    border: 1px solid transparent;   
 }
 
 .contact-button:focus, .contact-button:active {
     box-shadow: none;
     outline: none;
+}
+
+.contact-button.disabled {
+    z-index: 4;
+    animation: fadeOut var(--animation-fade-time) linear forwards;
+    -webkit-animation: fadeOut var(--animation-fade-time) linear forwards;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    99% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
 }

@@ -86,7 +86,8 @@ const App = () => {
 			<ContactButton 
 				onClick={goToContactPage} 
 				onTransition={onTransition}
-			/>
+				dontShow={actualState === 'contact'}
+			/>			
 			<ControlButtons 
 				onTransition={onTransition}
 				onUp={actualState === 'intro' ? null : onUp}
