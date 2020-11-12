@@ -24,7 +24,7 @@ const ControlButtons = ({ onUp, onDown, onTransition }) => {
 
 	useEffect(() => { isDisabled.current = disabled; }, [disabled]);
 
-	useEffect(() => { setDisabled(onTransition || disabled); }, [onTransition]);
+	useEffect(() => { setDisabled(Boolean(onTransition)); }, [onTransition]);
 
 	useEffect(() => { 
 		scrollTimeOut.current = setTimeout(() => {
@@ -147,6 +147,9 @@ const ControlButtons = ({ onUp, onDown, onTransition }) => {
 
 		return style;
 	}	
+
+	console.debug({ disabled });
+	console.debug({ onUp: !onUp });
 
 	return (
 		<>

@@ -57,11 +57,18 @@
     -webkit-animation: contactSectionOut var(--animation-fade-time) ease-in-out forwards;
 }
 
-.contact-page .contact-section .title {
+.contact-page .contact-section .title {    
     font-size: 65px;
     line-height: 65px;
     margin-bottom: 20px;
     font-family: 'Cormorant Garamond';
+}
+
+@media screen and (max-width: 800px) {
+    .contact-page .contact-section .title {
+        font-size: 40px;
+        line-height: 40px;
+    }
 }
 
 .contact-page .social-media {
@@ -78,6 +85,10 @@
     -o-transition: filter 0.5s ease;
     -ms-transition: filter 0.5s ease;
     transition: filter 0.5s ease;
+}
+
+.contact-page .contact-section .info {
+    line-break: anywhere;
 }
 
 .contact-page .contact-section .info,
