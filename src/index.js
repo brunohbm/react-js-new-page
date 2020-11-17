@@ -20,7 +20,7 @@ const render = {
 };
 
 const App = () => {
-	const [actualState, setActualState] = useState('intro');
+	const [actualState, setActualState] = useState('contact');
 	const [onTransition, setOnTransition] = useState(false);
 
 	const pageProps = {

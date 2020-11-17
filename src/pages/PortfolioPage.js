@@ -2,72 +2,44 @@ import React, { useState, useEffect } from 'react';
 
 import './PortfolioPage.css';
 import arrow from '../../assets/images/right-arrow.svg';
+import reactIcon from '../assets/icons/react.png';
+import antdIcon from '../assets/icons/antd.png';
 
 const projects = [
     {
-        title: 'TURN CARD',
-        description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here, making it look like readable English.',
+        title: 'LUCIDO CAST',
+        description: 'This project was a design project made for a podcast, the Lucido Cast. The idea of this podcast is to talk about things that we usually do not talk about. So I used some illustrations and colors that follow the main idea.',
         images: [
-            "https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png",
-            "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg",
-            "https://cdn.pixabay.com/photo/2015/02/24/15/41/dog-647528__340.jpg",
-            "https://images.pexels.com/photos/956981/milky-way-starry-sky-night-sky-star-956981.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR0AnQUza0zwKklcP9bASAX5JRS_m08RouqWA&usqp=CAU",
-            "https://dynaimage.cdn.cnn.com/cnn/c_fill,g_auto,w_1200,h_675,ar_16:9/https%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F191120053137-03-milky-way-images-australia.jpg"
+            'https://i.ibb.co/g3ZKztJ/Web-1920-24.png',
+            'https://i.ibb.co/C0CyZ1W/Web-1920-18.png',
+            'https://i.ibb.co/z7LrKSD/Web-1920-15.png',
+            'https://i.ibb.co/Rgvg8Ft/Web-1920-7.png',
+            'https://i.ibb.co/sFv6yKy/Web-1920-6.png',
+            'https://i.ibb.co/cr5ZJLt/Web-1920-3.png'
         ],
-        technologies: [
-            {
-                name: 'React JS',
-                image: 'https://cdn4.iconfinder.com/data/icons/logos-brands-5/24/react-512.png',
-            },
-            {
-                name: 'React JS',
-                image: 'https://cdn4.iconfinder.com/data/icons/logos-brands-5/24/react-512.png',
-            },
-            {
-                name: 'React JS',
-                image: 'https://cdn4.iconfinder.com/data/icons/logos-brands-5/24/react-512.png',
-            }
-        ]
     },
     {
         title: 'TURN CARD',
-        description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here, making it look like readable English.',
+        description: 'The Turn Card is a web project to help people to study more easily. The main idea is to create a bunch of cards and these cards will have a time period, and when this period has ended you need to study the card again.',
         images: [
-            "https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png",
-            "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg",
-            "https://cdn.pixabay.com/photo/2015/02/24/15/41/dog-647528__340.jpg",
-            "https://images.pexels.com/photos/956981/milky-way-starry-sky-night-sky-star-956981.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR0AnQUza0zwKklcP9bASAX5JRS_m08RouqWA&usqp=CAU",
-            "https://dynaimage.cdn.cnn.com/cnn/c_fill,g_auto,w_1200,h_675,ar_16:9/https%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F191120053137-03-milky-way-images-australia.jpg"
+            'https://i.ibb.co/XCK7R79/Mask-Group-4.png',
+            'https://i.ibb.co/r36dvZB/Mask-Group-3.png',
+            'https://i.ibb.co/d0j5Mn2/Mask-Group-5.png',            
+            'https://i.ibb.co/KxwwtCR/Mask-Group-1.png',
+            'https://i.ibb.co/FBGPVsc/Mask-Group-6.png',            
+            'https://i.ibb.co/XkrK65j/Mask-Group-2.png'
         ], 
         technologies: [
             {
                 name: 'React JS',
-                image: 'https://cdn4.iconfinder.com/data/icons/logos-brands-5/24/react-512.png',
+                image: reactIcon,
             },
             {
-                name: 'React JS',
-                image: 'https://cdn4.iconfinder.com/data/icons/logos-brands-5/24/react-512.png',
-            },
-            {
-                name: 'React JS',
-                image: 'https://cdn4.iconfinder.com/data/icons/logos-brands-5/24/react-512.png',
+                name: 'Ant Design',
+                image: antdIcon,
             }
         ]
-    },
-    {
-        title: 'TURN CARD',
-        description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here, making it look like readable English.',
-        images: [
-            "https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png",
-            "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg",
-            "https://cdn.pixabay.com/photo/2015/02/24/15/41/dog-647528__340.jpg",
-            "https://images.pexels.com/photos/956981/milky-way-starry-sky-night-sky-star-956981.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR0AnQUza0zwKklcP9bASAX5JRS_m08RouqWA&usqp=CAU",
-            "https://dynaimage.cdn.cnn.com/cnn/c_fill,g_auto,w_1200,h_675,ar_16:9/https%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F191120053137-03-milky-way-images-australia.jpg"
-        ],        
-    },
+    }
 ];
 
 const PortfolioPage = () => {
