@@ -7,7 +7,7 @@
 }
 
 .portfolio-page .total-project-values {
-    color: var(--secundary-color);
+    color: var(--secondary-color);
     font-size: 26px;
     letter-spacing: 6px;
     font-weight: 500;
@@ -40,7 +40,7 @@
     left: 50%;
     top: 50%;
     opacity: 0;
-    color: var(--secundary-color);
+    color: var(--secondary-color);
     transform: translate(-50%, -50%);
     animation: fadeInOut 6s ease forwards;
 }
@@ -179,7 +179,7 @@
     top: 50%;
     transform: translate(0px, -68%);
     position: fixed;
-    background-color: var(--secundary-color);
+    background-color: var(--secondary-color);
     -webkit-transition: right 1s, transform 1s, height 1s, opacity 1s ease-in-out;
     -moz-transition: right 1s, transform 1s, height 1s, opacity 1s ease-in-out;
     -o-transition: right 1s, transform 1s, height 1s, opacity 1s ease-in-out;
@@ -246,6 +246,20 @@
     -o-transition: opacity 2.5s, top 1.2s ease;
     -ms-transition: opacity 2.5s, top 1.2s ease;
     transition: opacity 2.5s, top 1.2s ease;
+}
+
+.portfolio-page .projects-carousel .project .title a {
+    color: var(--primary-color);
+    text-decoration: none;
+    -webkit-transition: color 1s ease;
+    -moz-transition: color 1s ease;
+    -o-transition: color 1s ease;
+    -ms-transition: color 1s ease;
+    transition: color 1s ease;
+}
+
+.portfolio-page .projects-carousel .project .title a:hover {    
+    color: var(--secondary-color);
 }
 
 .portfolio-page .projects-carousel .project.active .title {

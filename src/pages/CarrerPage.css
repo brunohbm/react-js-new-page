@@ -12,7 +12,7 @@
 .col {
     width: calc(25% - 5.2vw);
     position: fixed;
-    color: var(--secundary-color);
+    color: var(--secondary-color);
     background-color: var(--backgroud-color);  
     bottom: 0;
     z-index: 2;

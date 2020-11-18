@@ -9,7 +9,7 @@ const ContactPage = () => (
 	<div className="contact-page">
         <div className="left-bar" />
         <div className="info-section">
-            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        Hello, how can I help you? My name is Bruno Henrique I'm a developer and I do some design works too. If you need anything or you have some questions,  please contact me. I'm sure that we can help each other. 
         </div>
         <div className="contact-section">
             <div className="title">

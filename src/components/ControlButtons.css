@@ -43,7 +43,7 @@
 
 .control-buttons button {
     background-color: transparent;
-    color: var(--secundary-color);
+    color: var(--secondary-color);
     border: none;
     font-family: 'Montserrat';
     font-size: 20px;

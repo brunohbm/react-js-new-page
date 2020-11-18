@@ -10,7 +10,7 @@
 }
 
 .main-page .first-text-part, .main-page .fourth-text-part {   
-    color: var(--secundary-color);
+    color: var(--secondary-color);
     transition: color 2s;
 }
 

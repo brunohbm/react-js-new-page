@@ -8,8 +8,8 @@ const MainPage = () => (
 		<h1 className="second-text-part">HOW CAN I</h1>
 		<h1 className="third-text-part">HELP YOU ?</h1>
 		<h1 className="fourth-text-part">HELP YOU ?</h1>
-		<img className="down-hand" src={hand} alt="No image" />
-		<img className="up-hand" src={hand} alt="No image" />
+		<img className="down-hand" src={hand} alt="Down Hand" />
+		<img className="up-hand" src={hand} alt="Up Hand" />
 	</div>
 );
 

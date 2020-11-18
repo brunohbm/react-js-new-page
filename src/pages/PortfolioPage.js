@@ -38,7 +38,8 @@ const projects = [
                 name: 'Ant Design',
                 image: antdIcon,
             }
-        ]
+        ],
+        link: 'https://brunohbm.github.io/turn-card-demo/'
     }
 ];
 
@@ -98,12 +99,17 @@ const PortfolioPage = () => {
                             onClick={() => { setActualProject(index); }}
                         >
                             <div className="title">
-                                {project.title}
+                            {project.link ? (
+                                <a href={project.link} target="_blank">
+                                    {project.title}
+                                </a>
+                            ) : project.title}
                             </div>
                             {
                                 project.images.map((image, index) => (
                                     <img
                                         src={image}
+                                        alt={`Image ${index} - ${project.title}`}
                                         style={getAnimationDelay(project, index)}
                                     />
                                 ))
@@ -123,6 +129,7 @@ const PortfolioPage = () => {
                                                     return (
                                                         <div className="item">
                                                             <img
+                                                                alt={tecnologie.name}
                                                                 src={tecnologie.image}
                                                                 className="item-image"
                                                             />
@@ -137,7 +144,7 @@ const PortfolioPage = () => {
                                     ) : null
                                 }                                
                                 <div className="expand-button">
-                                    <img src={arrow} className="arrow" />
+                                    <img src={arrow} className="arrow" alt="Arrow" />
                                 </div>
                             </div>                      
                         </div>
