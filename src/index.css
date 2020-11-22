@@ -12,6 +12,16 @@ body {
     margin: 0px;
 }
 
+::-moz-selection {
+    color: var(--secondary-color);
+    background: var(--primary-color);
+  }
+  
+  ::selection {
+    color: var(--secondary-color);
+    background: var(--primary-color);
+  }
+
 .main-container {
     height: 100vh;
 }
